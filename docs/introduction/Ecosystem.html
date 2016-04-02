@@ -1,0 +1,973 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>生態系 | Redux</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.4.3">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../../_book/gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../../../_book/gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../../../_book/gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../../../_book/gitbook/plugins/gitbook-plugin-edit-link/plugin.css">
+        
+    
+        
+        <link rel="stylesheet" href="../../../_book/gitbook/plugins/gitbook-plugin-prism/prism.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="../../docs/introduction/Examples.html" />
+    
+    
+    <link rel="prev" href="../../docs/introduction/PriorArt.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book" data-level="1.4" data-basepath="../../../_book" data-revision="Sat Apr 02 2016 12:11:29 GMT+0800 (CST)">
+    
+
+<div class="book-summary">
+    <div class="book-search" role="search">
+        <input type="text" placeholder="Type to search" class="form-control" />
+    </div>
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../../../_book/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        Read Me
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="docs/introduction/index.html">
+            
+                
+                    <a href="../../docs/introduction/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        介紹
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1" data-path="docs/introduction/Motivation.html">
+            
+                
+                    <a href="../../docs/introduction/Motivation.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.</b>
+                        
+                        動機
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="docs/introduction/ThreePrinciples.html">
+            
+                
+                    <a href="../../docs/introduction/ThreePrinciples.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.</b>
+                        
+                        三大原則
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="docs/introduction/PriorArt.html">
+            
+                
+                    <a href="../../docs/introduction/PriorArt.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.3.</b>
+                        
+                        先前技術
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4" data-path="docs/introduction/Ecosystem.html">
+            
+                
+                    <a href="../../docs/introduction/Ecosystem.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.4.</b>
+                        
+                        生態系
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="docs/introduction/Examples.html">
+            
+                
+                    <a href="../../docs/introduction/Examples.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.5.</b>
+                        
+                        範例
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="docs/basics/index.html">
+            
+                
+                    <a href="../../docs/basics/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        基礎
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="docs/basics/Actions.html">
+            
+                
+                    <a href="../../docs/basics/Actions.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        Actions
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="docs/basics/Reducers.html">
+            
+                
+                    <a href="../../docs/basics/Reducers.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                        Reducers
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="docs/basics/Store.html">
+            
+                
+                    <a href="../../docs/basics/Store.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.</b>
+                        
+                        Store
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="docs/basics/DataFlow.html">
+            
+                
+                    <a href="../../docs/basics/DataFlow.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.</b>
+                        
+                        資料流
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="docs/basics/UsageWithReact.html">
+            
+                
+                    <a href="../../docs/basics/UsageWithReact.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.5.</b>
+                        
+                        搭配 React 運用
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="docs/basics/ExampleTodoList.html">
+            
+                
+                    <a href="../../docs/basics/ExampleTodoList.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.6.</b>
+                        
+                        範例：Todo 清單
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="docs/advanced/index.html">
+            
+                
+                    <a href="../../docs/advanced/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        進階
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1" data-path="docs/advanced/AsyncActions.html">
+            
+                
+                    <a href="../../docs/advanced/AsyncActions.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                        Async Actions
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="docs/advanced/AsyncFlow.html">
+            
+                
+                    <a href="../../docs/advanced/AsyncFlow.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.</b>
+                        
+                        非同步資料流
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="docs/advanced/Middleware.html">
+            
+                
+                    <a href="../../docs/advanced/Middleware.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.3.</b>
+                        
+                        Middleware
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" >
+            
+            <span><b>3.4.</b> Usage with React Router</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="docs/advanced/ExampleRedditAPI.html">
+            
+                
+                    <a href="../../docs/advanced/ExampleRedditAPI.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.5.</b>
+                        
+                        範例：Reddit API
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6" >
+            
+            <span><b>3.6.</b> Next Steps</span>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4" data-path="docs/recipes/index.html">
+            
+                
+                    <a href="../../docs/recipes/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                        Recipes
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1" data-path="docs/recipes/MigratingToRedux.html">
+            
+                
+                    <a href="../../docs/recipes/MigratingToRedux.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.1.</b>
+                        
+                        遷移到 Redux
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="docs/recipes/UsingObjectSpreadOperator.html">
+            
+                
+                    <a href="../../docs/recipes/UsingObjectSpreadOperator.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.2.</b>
+                        
+                        使用 Object Spread 運算子
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="docs/recipes/ReducingBoilerplate.html">
+            
+                
+                    <a href="../../docs/recipes/ReducingBoilerplate.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.3.</b>
+                        
+                        減少 Boilerplate
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="docs/recipes/ServerRendering.html">
+            
+                
+                    <a href="../../docs/recipes/ServerRendering.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.4.</b>
+                        
+                        伺服器 Render
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" data-path="docs/recipes/WritingTests.html">
+            
+                
+                    <a href="../../docs/recipes/WritingTests.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.5.</b>
+                        
+                        撰寫測試
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6" data-path="docs/recipes/ComputingDerivedData.html">
+            
+                
+                    <a href="../../docs/recipes/ComputingDerivedData.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.6.</b>
+                        
+                        計算衍生資料
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.7" data-path="docs/recipes/ImplementingUndoHistory.html">
+            
+                
+                    <a href="../../docs/recipes/ImplementingUndoHistory.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.7.</b>
+                        
+                        實作 Undo 歷史
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5" data-path="docs/FAQ.html">
+            
+                
+                    <a href="../../docs/FAQ.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.</b>
+                        
+                        常見問答集
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6" data-path="docs/Troubleshooting.html">
+            
+                
+                    <a href="../../docs/Troubleshooting.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.</b>
+                        
+                        疑難排解
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7" data-path="docs/Glossary.html">
+            
+                
+                    <a href="../../docs/Glossary.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.</b>
+                        
+                        術語表
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8" data-path="docs/api/index.html">
+            
+                
+                    <a href="../../docs/api/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.</b>
+                        
+                        API 參考
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="8.1" data-path="docs/api/createStore.html">
+            
+                
+                    <a href="../../docs/api/createStore.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.1.</b>
+                        
+                        createStore
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.2" data-path="docs/api/Store.html">
+            
+                
+                    <a href="../../docs/api/Store.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.2.</b>
+                        
+                        Store
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.3" data-path="docs/api/combineReducers.html">
+            
+                
+                    <a href="../../docs/api/combineReducers.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.3.</b>
+                        
+                        combineReducers
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.4" data-path="docs/api/applyMiddleware.html">
+            
+                
+                    <a href="../../docs/api/applyMiddleware.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.4.</b>
+                        
+                        applyMiddleware
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.5" data-path="docs/api/bindActionCreators.html">
+            
+                
+                    <a href="../../docs/api/bindActionCreators.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.5.</b>
+                        
+                        bindActionCreators
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.6" data-path="docs/api/compose.html">
+            
+                
+                    <a href="../../docs/api/compose.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.6.</b>
+                        
+                        compose
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="9" data-path="CHANGELOG.html">
+            
+                
+                    <a href="../../../_book/CHANGELOG.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.</b>
+                        
+                        變更日誌
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="10" data-path="PATRONS.html">
+            
+                
+                    <a href="../../../_book/PATRONS.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.</b>
+                        
+                        贊助者
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="11" data-path="docs/Feedback.html">
+            
+                
+                    <a href="../../docs/Feedback.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.</b>
+                        
+                        Feedback
+                    </a>
+            
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    Published with GitBook
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    <a href="#" class="btn pull-left toggle-summary" aria-label="Table of Contents"><i class="fa fa-align-justify"></i></a>
+    <a href="#" class="btn pull-left toggle-search" aria-label="Search"><i class="fa fa-search"></i></a>
+    
+    <div id="font-settings-wrapper" class="dropdown pull-left">
+        <a href="#" class="btn toggle-dropdown" aria-label="Font Settings"><i class="fa fa-font"></i>
+        </a>
+        <div class="dropdown-menu font-settings">
+    <div class="dropdown-caret">
+        <span class="caret-outer"></span>
+        <span class="caret-inner"></span>
+    </div>
+
+    <div class="buttons">
+        <button type="button" id="reduce-font-size" class="button size-2">A</button>
+        <button type="button" id="enlarge-font-size" class="button size-2">A</button>
+    </div>
+
+    <div class="buttons font-family-list">
+        <button type="button" data-font="0" class="button">Serif</button>
+        <button type="button" data-font="1" class="button">Sans</button>
+    </div>
+
+    <div class="buttons color-theme-list">
+        <button type="button" id="color-theme-preview-0" class="button size-3" data-theme="0">White</button>
+        <button type="button" id="color-theme-preview-1" class="button size-3" data-theme="1">Sepia</button>
+        <button type="button" id="color-theme-preview-2" class="button size-3" data-theme="2">Night</button>
+    </div>
+</div>
+
+    </div>
+
+    <!-- Actions Right -->
+    
+    <div class="dropdown pull-right">
+        <a href="#" class="btn toggle-dropdown" aria-label="Share"><i class="fa fa-share-alt"></i>
+        </a>
+        <div class="dropdown-menu font-settings dropdown-left">
+            <div class="dropdown-caret">
+                <span class="caret-outer"></span>
+                <span class="caret-inner"></span>
+            </div>
+            <div class="buttons">
+                <button type="button" data-sharing="twitter" class="button">
+                    Share on Twitter
+                </button>
+                <button type="button" data-sharing="google-plus" class="button">
+                    Share on Google
+                </button>
+                <button type="button" data-sharing="facebook" class="button">
+                    Share on Facebook
+                </button>
+                <button type="button" data-sharing="weibo" class="button">
+                    Share on Weibo
+                </button>
+                <button type="button" data-sharing="instapaper" class="button">
+                    Share on Instapaper
+                </button>
+            </div>
+        </div>
+    </div>
+    
+
+    
+    <a href="#" target="_blank" class="btn pull-right google-plus-sharing-link sharing-link" data-sharing="google-plus" aria-label="Google"><i class="fa fa-google-plus"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right facebook-sharing-link sharing-link" data-sharing="facebook" aria-label="Facebook"><i class="fa fa-facebook"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right twitter-sharing-link sharing-link" data-sharing="twitter" aria-label="Twitter"><i class="fa fa-twitter"></i></a>
+    
+    
+    
+
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../../../_book/" >Redux</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <a id="edit-link" href="https://github.com/chentsulin/redux/tree/new-doc-zh-tw/docs/introduction/Ecosystem.md" class="btn fa fa-edit pull-left">&nbsp;&nbsp;Edit This Page</a><h1 id="%E7%94%9F%E6%85%8B%E7%B3%BB">&#x751F;&#x614B;&#x7CFB;</h1>
+<p>Redux &#x662F;&#x500B;&#x975E;&#x5E38;&#x5C0F;&#x7684; library&#xFF0C;&#x4F46;&#x5B83;&#x7684;&#x4ECB;&#x9762;&#x548C; APIs &#x90FD;&#x662F;&#x7CBE;&#x6311;&#x7D30;&#x9078;&#x4F86;&#x884D;&#x751F;&#x51FA;&#x5DE5;&#x5177;&#x548C; extensions &#x7684;&#x751F;&#x614B;&#x7CFB;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x9700;&#x8981;&#x4E00;&#x500B;&#x6709;&#x95DC; Redux &#x4E00;&#x5207;&#x7684;&#x5EE3;&#x6CDB;&#x6E05;&#x55AE;&#xFF0C;&#x6211;&#x5011;&#x63A8;&#x85A6; <a href="https://github.com/xgrommx/awesome-redux" target="_blank">Awesome Redux</a>&#x3002;&#x5B83;&#x5305;&#x542B;&#x7BC4;&#x4F8B;&#x3001;boilerplates&#x3001;middleware&#x3001;utility libraries &#x548C;&#x8A31;&#x591A;&#x5176;&#x4ED6;&#x7684;&#x6771;&#x897F;&#x3002;</p>
+<p>&#x5728;&#x9019;&#x500B;&#x9801;&#x9762;&#x4E0A;&#xFF0C;&#x6211;&#x5011;&#x5C07;&#x53EA;&#x5217;&#x51FA;&#x5B83;&#x5011;&#x4E4B;&#x4E2D;&#x4E00;&#x4E9B; Redux &#x7DAD;&#x8B77;&#x8005;&#x5DF2;&#x7D93;&#x89AA;&#x81EA;&#x5BE9;&#x6838;&#x7684;&#x3002;&#x4E0D;&#x8981;&#x56E0;&#x6B64;&#x800C;&#x6253;&#x6D88;&#x4F60;&#x5617;&#x8A66;&#x5176;&#x4ED6;&#x9805;&#x76EE;&#x7684;&#x5FF5;&#x982D;&#xFF01;&#x9019;&#x500B;&#x751F;&#x614B;&#x7CFB;&#x6210;&#x9577;&#x5F97;&#x592A;&#x5FEB;&#xFF0C;&#x6211;&#x5011;&#x6C92;&#x6709;&#x8DB3;&#x5920;&#x7684;&#x6642;&#x9593;&#x53BB;&#x67E5;&#x770B;&#x6240;&#x6709;&#x7684;&#x6771;&#x897F;&#x3002;&#x8ACB;&#x628A;&#x9019;&#x4E9B;&#x7576;&#x4F5C;&#x300C;&#x54E1;&#x5DE5;&#x63A8;&#x85A6;&#x300D;&#xFF0C;&#x5982;&#x679C;&#x4F60;&#x5DF2;&#x7D93;&#x4F7F;&#x7528; Redux &#x505A;&#x51FA;&#x4E86;&#x5F88;&#x68D2;&#x7684;&#x6771;&#x897F;&#xFF0C;&#x8ACB;&#x4E0D;&#x8981;&#x7336;&#x8C6B;&#x99AC;&#x4E0A;&#x63D0;&#x4EA4;&#x4E00;&#x500B; PR&#x3002;</p>
+<h2 id="%E5%AD%B8%E7%BF%92-redux">&#x5B78;&#x7FD2; Redux</h2>
+<h3 id="screencasts">Screencasts</h3>
+<ul>
+<li><strong><a href="https://egghead.io/series/getting-started-with-redux" target="_blank">Getting Started with Redux</a></strong> &#x2014; &#x76F4;&#x63A5;&#x5F9E; Redux &#x7684;&#x4F5C;&#x8005;&#x5B78;&#x7FD2;&#x5B83;&#x7684;&#x57FA;&#x790E; (30 &#x90E8;&#x514D;&#x8CBB;&#x5F71;&#x7247;)</li>
+</ul>
+<h3 id="%E6%87%89%E7%94%A8%E7%A8%8B%E5%BC%8F%E7%AF%84%E4%BE%8B">&#x61C9;&#x7528;&#x7A0B;&#x5F0F;&#x7BC4;&#x4F8B;</h3>
+<ul>
+<li><a href="Examples.html">Official Examples</a> &#x2014; &#x4E00;&#x4E9B;&#x6DB5;&#x84CB;&#x4E0D;&#x540C; Redux &#x6280;&#x8853;&#x7684;&#x5B98;&#x65B9;&#x7BC4;&#x4F8B;</li>
+<li><a href="https://github.com/andrewngu/sound-redux" target="_blank">SoundRedux</a> &#x2014; &#x4E00;&#x500B;&#x7528; Redux &#x6253;&#x9020;&#x7684; SoundCloud &#x5BA2;&#x6236;&#x7AEF;</li>
+</ul>
+<h3 id="%E6%95%99%E5%AD%B8%E5%92%8C%E6%96%87%E7%AB%A0">&#x6559;&#x5B78;&#x548C;&#x6587;&#x7AE0;</h3>
+<ul>
+<li><a href="https://github.com/happypoulp/redux-tutorial" target="_blank">Redux Tutorial</a> &#x2014; &#x4E00;&#x6B65;&#x4E00;&#x6B65;&#x7684;&#x5B78;&#x7FD2;&#x5982;&#x4F55;&#x4F7F;&#x7528; redux</li>
+<li><a href="https://github.com/tayiorbeii/egghead.io_redux_course_notes" target="_blank">Redux Egghead Course Notes</a> &#x2014; Redux <a href="https://egghead.io/series/getting-started-with-redux" target="_blank">Egghead &#x5F71;&#x7247;&#x8AB2;&#x7A0B;</a> &#x7684;&#x7B46;&#x8A18;</li>
+<li><a href="https://blog.andyet.com/2015/08/06/what-the-flux-lets-redux" target="_blank">What the Flux?! Let&#x2019;s Redux.</a> &#x2014; &#x4E00;&#x500B; Redux &#x7684;&#x4ECB;&#x7D39;</li>
+<li><a href="https://code-cartoons.com/a-cartoon-intro-to-redux-3afb775501a6" target="_blank">A cartoon intro to Redux</a> &#x2014; &#x4E00;&#x500B;&#x8996;&#x89BA;&#x5316;&#x7684; Redux &#x8CC7;&#x6599;&#x6D41;&#x8AAA;&#x660E;</li>
+<li><a href="http://www.youhavetolearncomputers.com/blog/2015/9/15/a-conceptual-overview-of-redux-or-how-i-fell-in-love-with-a-javascript-state-container" target="_blank">Understanding Redux</a> &#x2014; &#x5B78;&#x7FD2; Redux &#x7684;&#x57FA;&#x790E;&#x6982;&#x5FF5;</li>
+<li><a href="https://medium.com/@bananaoomarang/handcrafting-an-isomorphic-redux-application-with-love-40ada4468af4" target="_blank">Handcrafting an Isomorphic Redux Application (With Love)</a> &#x2014; &#x4E00;&#x500B;&#x85C9;&#x7531;&#x8CC7;&#x6599;&#x6293;&#x53D6;&#x8207; routing &#x5EFA;&#x7ACB; universal &#x61C9;&#x7528;&#x7A0B;&#x5F0F;&#x7684;&#x6559;&#x5B78;</li>
+<li><a href="http://teropa.info/blog/2015/09/10/full-stack-redux-tutorial.html" target="_blank">Full-Stack Redux Tutorial</a> &#x2014; &#x4E00;&#x500B;&#x4F7F;&#x7528; Redux&#x3001;React &#x8207; Immutable &#x9032;&#x884C;&#x6E2C;&#x8A66;&#x5148;&#x884C;&#x958B;&#x767C;&#x7684;&#x8A73;&#x76E1;&#x6307;&#x5357;</li>
+<li><a href="https://auth0.com/blog/2016/01/04/secure-your-react-and-redux-app-with-jwt-authentication/" target="_blank">Secure Your React and Redux App with JWT Authentication</a> &#x2014; &#x5B78;&#x7FD2;&#x5982;&#x4F55;&#x52A0;&#x5165; JWT &#x9A57;&#x8B49;&#x5230;&#x4F60;&#x7684; React &#x548C; Redux app</li>
+<li><a href="https://medium.com/@meagle/understanding-87566abcfb7a#.l033pyr02" target="_blank">Understanding Redux Middleware</a> &#x2014; &#x5BE6;&#x4F5C; Redux middleware &#x7684;&#x6DF1;&#x5165;&#x6307;&#x5357;</li>
+<li><a href="https://medium.com/google-developer-experts/angular-2-introduction-to-redux-1cf18af27e6e" target="_blank">Angular 2 &#x2014; Introduction to Redux</a> &#x2014; &#x4E00;&#x500B;&#x4EE5; Angular 2 &#x70BA;&#x7BC4;&#x4F8B;&#x7684; Redux &#x57FA;&#x790E;&#x89C0;&#x5FF5;&#x4ECB;&#x7D39;</li>
+<li><a href="https://www.gitbook.com/book/maxfarseer/redux-course-ru/details" target="_blank">Working with VK API (in Russian)</a> &#x2014; &#x4E00;&#x500B;&#x793A;&#x7BC4;&#x5EFA;&#x7ACB; app &#x4E26;&#x4F7F;&#x7528; VK API &#x7684;&#x4FC4;&#x6587;&#x6559;&#x5B78;</li>
+</ul>
+<h3 id="%E6%BC%94%E8%AC%9B">&#x6F14;&#x8B1B;</h3>
+<ul>
+<li><a href="http://youtube.com/watch?v=xsSnOQynTHs" target="_blank">Live React: Hot Reloading and Time Travel</a> &#x2014; &#x770B;&#x770B; Redux &#x5F37;&#x5236;&#x7684;&#x9650;&#x5236;&#x5982;&#x4F55;&#x8B93;&#x96A8;&#x8457;&#x6642;&#x9593;&#x65C5;&#x884C; hot reload &#x8B8A;&#x5F97;&#x7C21;&#x55AE;</li>
+<li><a href="https://www.youtube.com/watch?v=qUlRpybs7_c" target="_blank">Cleaning the Tar: Using React within the Firefox Developer Tools</a> &#x2014; &#x5B78;&#x7FD2;&#x5982;&#x4F55;&#x6F38;&#x6F38;&#x7684;&#x628A;&#x65E2;&#x5B58;&#x7684; MVC &#x61C9;&#x7528;&#x7A0B;&#x5F0F;&#x9077;&#x79FB;&#x5230; Redux</li>
+<li><a href="https://www.youtube.com/watch?v=okdC5gcD-dM" target="_blank">Redux: Simplifying Application State</a> &#x2014; Redux &#x67B6;&#x69CB;&#x7684;&#x4ECB;&#x7D39;</li>
+</ul>
+<h2 id="%E4%BD%BF%E7%94%A8-redux">&#x4F7F;&#x7528; Redux</h2>
+<h3 id="%E7%B6%81%E5%AE%9A">&#x7D81;&#x5B9A;</h3>
+<ul>
+<li><a href="https://github.com/gaearon/react-redux" target="_blank">react-redux</a> &#x2014; React</li>
+<li><a href="https://github.com/wbuchwalter/ng-redux" target="_blank">ng-redux</a> &#x2014; Angular</li>
+<li><a href="https://github.com/wbuchwalter/ng2-redux" target="_blank">ng2-redux</a> &#x2014; Angular 2</li>
+<li><a href="https://github.com/redbooth/backbone-redux" target="_blank">backbone-redux</a> &#x2014; Backbone</li>
+<li><a href="https://github.com/ekosz/redux-falcor" target="_blank">redux-falcor</a> &#x2014; Falcor</li>
+<li><a href="https://github.com/troch/deku-redux" target="_blank">deku-redux</a> &#x2014; Deku</li>
+</ul>
+<h3 id="middleware">Middleware</h3>
+<ul>
+<li><a href="http://github.com/gaearon/redux-thunk" target="_blank">redux-thunk</a> &#x2014; &#x64B0;&#x5BEB; async action creators &#x7684;&#x6700;&#x7C21;&#x55AE;&#x65B9;&#x5F0F;</li>
+<li><a href="https://github.com/acdlite/redux-promise" target="_blank">redux-promise</a> &#x2014; <a href="https://github.com/acdlite/flux-standard-action" target="_blank">FSA</a>-&#x76F8;&#x5BB9;&#x7684; promise middleware</li>
+<li><a href="https://github.com/acdlite/redux-rx" target="_blank">redux-rx</a> &#x2014; Redux &#x7684; RxJS utilities&#xFF0C;&#x5305;&#x542B;&#x4E00;&#x500B; Observable &#x7684; middleware</li>
+<li><a href="https://github.com/acdlite/redux-batched-updates" target="_blank">redux-batched-updates</a> &#x2014; &#x8B93; Redux dispatches &#x7684;&#x7D50;&#x679C;&#x6279;&#x6B21;&#x767C;&#x751F; React &#x66F4;&#x65B0;</li>
+<li><a href="https://github.com/fcomb/redux-logger" target="_blank">redux-logger</a> &#x2014; &#x8A18;&#x9304;&#x6BCF;&#x4E00;&#x500B; Redux action &#x548C;&#x4E0B;&#x4E00;&#x500B; state</li>
+<li><a href="https://github.com/leoasis/redux-immutable-state-invariant" target="_blank">redux-immutable-state-invariant</a> &#x2014; &#x5728;&#x958B;&#x767C;&#x6642;&#xFF0C;&#x8B66;&#x544A; state &#x7684;&#x8B8A;&#x66F4;</li>
+<li><a href="https://github.com/markdalgleish/redux-analytics" target="_blank">redux-analytics</a> &#x2014; Redux &#x7684;&#x5206;&#x6790;&#x7528; middleware</li>
+<li><a href="https://github.com/weo-edu/redux-gen" target="_blank">redux-gen</a> &#x2014; Redux &#x7684; Generator middleware</li>
+<li><a href="https://github.com/yelouafi/redux-saga" target="_blank">redux-saga</a> &#x2014; &#x4E00;&#x500B; Redux &#x61C9;&#x7528;&#x7A0B;&#x5F0F;&#x7684; side effect model &#x65B9;&#x6848;</li>
+</ul>
+<h3 id="routing">Routing</h3>
+<ul>
+<li><a href="https://github.com/reactjs/react-router-redux" target="_blank">react-router-redux</a> &#x2014; &#x4EE5;&#x6975;&#x7C21;&#x55AE;&#x7684; bindings &#x7DAD;&#x6301; React Router &#x548C; Redux &#x540C;&#x6B65;</li>
+</ul>
+<h3 id="components">Components</h3>
+<ul>
+<li><a href="https://github.com/erikras/redux-form" target="_blank">redux-form</a> &#x2014; &#x628A; React &#x8868;&#x55AE; state &#x4FDD;&#x5B58;&#x5728; Redux &#x88E1;</li>
+<li><a href="https://github.com/davidkpiano/react-redux-form" target="_blank">react-redux-form</a> &#x2014; &#x5728; React &#x5167;&#x4EE5; Redux &#x7C21;&#x55AE;&#x5730;&#x5EFA;&#x7ACB;&#x8868;&#x55AE;</li>
+</ul>
+<h3 id="enhancers">Enhancers</h3>
+<ul>
+<li><a href="https://github.com/tappleby/redux-batched-subscribe" target="_blank">redux-batched-subscribe</a> &#x2014; &#x5BA2;&#x88FD;&#x5316; batching &#x4EE5;&#x53CA; debouncing &#x7684;&#x547C;&#x53EB;&#x7D66; store &#x7684;&#x8A02;&#x95B1;&#x8005;</li>
+<li><a href="https://github.com/johanneslumpe/redux-history-transitions" target="_blank">redux-history-transitions</a> &#x2014; &#x57FA;&#x65BC;&#x4EFB;&#x610F;&#x7684; actions &#x4F86;&#x8655;&#x7406; History transitions</li>
+<li><a href="https://github.com/ForbesLindesay/redux-optimist" target="_blank">redux-optimist</a> &#x2014; &#x6A02;&#x89C0;&#x5730;&#x4F7F;&#x7528;&#x53EF;&#x4EE5;&#x5728;&#x4E4B;&#x5F8C; commit &#x6216; revert &#x7684; actions</li>
+<li><a href="https://github.com/omnidan/redux-undo" target="_blank">redux-undo</a> &#x2014; &#x8F15;&#x9B06;&#x7684; undo/redo &#x4E26;&#x5728;&#x4F60;&#x7684; reducers &#x7684;&#x6B77;&#x53F2;&#x9593;&#x6D3B;&#x52D5;</li>
+<li><a href="https://github.com/omnidan/redux-ignore" target="_blank">redux-ignore</a> &#x2014; &#x85C9;&#x7531;&#x9663;&#x5217;&#x6216;&#x662F; filter function &#x4F86;&#x5FFD;&#x7565; redux actions</li>
+<li><a href="https://github.com/omnidan/redux-recycle" target="_blank">redux-recycle</a> &#x2014; &#x5728;&#x6536;&#x5230;&#x7279;&#x5B9A;&#x7684; actions &#x6642;&#x91CD;&#x7F6E; redux state</li>
+<li><a href="https://github.com/tshelburne/redux-batched-actions" target="_blank">redux-batched-actions</a> &#x2014; &#x7528;&#x53EA;&#x901A;&#x77E5; subscriber &#x4E00;&#x6B21;&#x7684;&#x65B9;&#x5F0F;&#x4F86; Dispatch &#x591A;&#x500B; actions</li>
+<li><a href="https://github.com/treasure-data/redux-search" target="_blank">redux-search</a> &#x2014; &#x81EA;&#x52D5;&#x5730;&#x5E6B;&#x8CC7;&#x6E90;&#x5728; web worker &#x4E2D;&#x5EFA;&#x7ACB;&#x7D22;&#x5F15;&#x4E26;&#x900F;&#x904E;&#x975E;&#x963B;&#x585E;&#x7684;&#x65B9;&#x5F0F;&#x641C;&#x5C0B;&#x5B83;&#x5011;</li>
+<li><a href="https://github.com/samiskin/redux-electron-store" target="_blank">redux-electron-store</a> &#x2014; &#x8DE8;&#x8D8A; Electron processes &#x540C;&#x6B65; Redux stores &#x7684; Store enhancers</li>
+<li><a href="https://github.com/raisemarketplace/redux-loop" target="_blank">redux-loop</a> &#x2014; &#x7531; Reducer &#x8FD4;&#x56DE;&#x9054;&#x6210;&#x81EA;&#x7136;&#x4E14;&#x7D14;&#x7CB9;&#x5730;&#x5E8F;&#x5217; effects</li>
+<li><a href="https://github.com/salsita/redux-side-effects" target="_blank">redux-side-effects</a> &#x2014; &#x5229;&#x7528; Generator &#x4F86;&#x5F9E;&#x4F60;&#x7684; pure reducer &#x5BA3;&#x544A; side effect &#x7684;&#x7522;&#x751F;</li>
+</ul>
+<h3 id="utilities">Utilities</h3>
+<ul>
+<li><a href="https://github.com/faassen/reselect" target="_blank">reselect</a> &#x2014; &#x6709;&#x6548;&#x5730;&#x7372;&#x53D6;&#x8CC7;&#x6599;&#x9078;&#x64C7;&#x5668;&#xFF0C;&#x9748;&#x611F;&#x4F86;&#x81EA; NuclearJS</li>
+<li><a href="https://github.com/gaearon/normalizr" target="_blank">normalizr</a> &#x2014; &#x6B63;&#x898F;&#x5316;&#x5DE2;&#x72C0;&#x7684; API &#x56DE;&#x61C9;&#x8B93; reducers &#x6613;&#x65BC;&#x8655;&#x7406;</li>
+<li><a href="https://github.com/acdlite/redux-actions" target="_blank">redux-actions</a> &#x2014; &#x6E1B;&#x5C11;&#x64B0;&#x5BEB; reducers &#x548C; action creators &#x7684; boilerplate</li>
+<li><a href="https://github.com/pauldijou/redux-act" target="_blank">redux-act</a> &#x2014; &#x4E00;&#x500B;&#x81EA;&#x5DF1;&#x7528;&#x4F86;&#x5EFA;&#x7ACB; reducers &#x548C; action creators &#x7684; library</li>
+<li><a href="https://github.com/acdlite/redux-transducers" target="_blank">redux-transducers</a> &#x2014; Redux &#x7684; Transducer utilities</li>
+<li><a href="https://github.com/gajus/redux-immutable" target="_blank">redux-immutable</a> &#x2014; &#x7528;&#x4F86;&#x5EFA;&#x7ACB;&#x4E00;&#x500B;&#x8207; Redux &#x4E2D; <code>combineReducers</code> &#x7B49;&#x50F9;&#x4F46;&#x4F7F;&#x7528; <a href="https://facebook.github.io/immutable-js/" target="_blank">Immutable.js</a> state &#x7684; function</li>
+<li><a href="https://github.com/gcanti/redux-tcomb" target="_blank">redux-tcomb</a> &#x2014; Immutable &#x8207;&#x7D66; Redux &#x7528;&#x7684; type-checked state &#x548C; actions</li>
+<li><a href="https://github.com/arnaudbenard/redux-mock-store" target="_blank">redux-mock-store</a> &#x2014; Mock redux store &#x4EE5;&#x6E2C;&#x8A66;&#x4F60;&#x7684;&#x61C9;&#x7528;&#x7A0B;&#x5F0F;</li>
+</ul>
+<h3 id="%E9%96%8B%E7%99%BC%E5%B7%A5%E5%85%B7">&#x958B;&#x767C;&#x5DE5;&#x5177;</h3>
+<ul>
+<li><a href="http://github.com/gaearon/redux-devtools" target="_blank">Redux DevTools</a> &#x2014; &#x4E00;&#x500B; action &#x8A18;&#x9304;&#x5668;&#xFF0C;&#x5B83;&#x4F34;&#x96A8;&#x8457; time travel UI&#x3001;hot reload &#x548C; reducers &#x7684;&#x932F;&#x8AA4;&#x8655;&#x7406;&#xFF0C;<a href="https://www.youtube.com/watch?v=xsSnOQynTHs" target="_blank">&#x5728; React Europe &#x9996;&#x6B21;&#x5C55;&#x793A;</a></li>
+<li><a href="https://github.com/zalmoxisus/redux-devtools-extension" target="_blank">Redux DevTools Extension</a> &#x2014; &#x4E00;&#x500B;&#x5305;&#x88DD;&#x4E86; Redux DevTools &#x4E26;&#x63D0;&#x4F9B;&#x984D;&#x5916;&#x529F;&#x80FD;&#x7684; Chrome &#x64F4;&#x5145;&#x5957;&#x4EF6;</li>
+</ul>
+<h3 id="devtools-monitors">DevTools Monitors</h3>
+<ul>
+<li><a href="https://github.com/gaearon/redux-devtools-log-monitor" target="_blank">Log Monitor</a> &#x2014; &#x4F7F;&#x7528;&#x6A39;&#x72C0; view &#x7684; Redux DevTools &#x9810;&#x8A2D; monitor</li>
+<li><a href="https://github.com/gaearon/redux-devtools-dock-monitor" target="_blank">Dock Monitor</a> &#x2014; &#x4E00;&#x500B;&#x8B93; Redux DevTools monitors &#x4F7F;&#x7528;&#x7684;&#x53EF;&#x66F4;&#x52D5;&#x5927;&#x5C0F;&#x8207;&#x79FB;&#x52D5;&#x7684; dock</li>
+<li><a href="https://github.com/calesce/redux-slider-monitor" target="_blank">Slider Monitor</a> &#x2014; &#x4E00;&#x500B;&#x70BA; Redux DevTools &#x5BA2;&#x88FD;&#x5316;&#x4F86;&#x91CD;&#x8907;&#x64AD;&#x653E;&#x5DF2;&#x7D00;&#x9304;&#x4E4B; Redux actions &#x7684; monitor</li>
+<li><a href="https://github.com/alexkuz/redux-devtools-inspector" target="_blank">Inspector</a> &#x2014; &#x4E00;&#x500B; Redux DevTools &#x5BA2;&#x88FD;&#x5316; monitor &#x7528;&#x4F86;&#x8B93;&#x4F60;&#x7BE9;&#x9078; actions&#x3001;&#x6AA2;&#x67E5;&#x5DEE;&#x7570;&#x3001;&#x63A2;&#x52D8; state &#x8DEF;&#x5F91;&#x6DF1;&#x5EA6;&#xFF0C;&#x4EE5;&#x77AD;&#x89E3;&#x5B83;&#x5011;&#x7684;&#x8B8A;&#x5316;</li>
+<li><a href="https://github.com/whetstone/redux-devtools-diff-monitor" target="_blank">Diff Monitor</a> &#x2014; &#x4E00;&#x500B; Redux DevTools &#x7528;&#x4F86;&#x6BD4;&#x8F03; Redux store &#x7D93;&#x7531; actions &#x66F4;&#x52D5;&#x5F8C;&#x4E4B;&#x5DEE;&#x7570;&#x7684; monitor</li>
+<li><a href="https://github.com/bvaughn/redux-devtools-filterable-log-monitor/" target="_blank">Filterable Log Monitor</a> &#x2014; Redux DevTools &#x7684;&#x53EF;&#x7BE9;&#x9078;&#x6A39;&#x72C0; view monitor</li>
+<li><a href="https://github.com/romseguy/redux-devtools-chart-monitor" target="_blank">Chart Monitor</a> &#x2014; &#x4E00;&#x500B; Redux DevTools &#x8868;&#x55AE; monitor</li>
+<li><a href="https://github.com/zalmoxisus/redux-devtools-filter-actions" target="_blank">Filter Actions</a> &#x2014; &#x6709;&#x80FD;&#x529B;&#x904E;&#x6FFE; actions &#x5730;&#x53EF;&#x7D44;&#x5408; Redux DevTools monitor</li>
+</ul>
+<h3 id="%E7%A4%BE%E7%BE%A4%E6%85%A3%E4%BE%8B">&#x793E;&#x7FA4;&#x6163;&#x4F8B;</h3>
+<ul>
+<li><a href="https://github.com/acdlite/flux-standard-action" target="_blank">Flux Standard Action</a> &#x2014; &#x4E00;&#x500B; Flux action &#x7269;&#x4EF6; &#x7684;&#x4EBA;&#x6027;&#x5316;&#x6A19;&#x6E96;</li>
+<li><a href="https://github.com/gajus/canonical-reducer-composition" target="_blank">Canonical Reducer Composition</a> &#x2014; &#x4E00;&#x500B;&#x5DE2;&#x72C0; reducer composition &#x7684;&#x81EA;&#x8A02;&#x6A19;&#x6E96;</li>
+<li><a href="https://github.com/erikras/ducks-modular-redux" target="_blank">Ducks: Redux Reducer Bundles</a> &#x2014; &#x4E00;&#x500B; &#x95DC;&#x65BC;&#x5305;&#x88DD; reducers&#x3001;action types &#x548C; actions &#x7684;&#x5EFA;&#x8B70;</li>
+</ul>
+<h3 id="%E7%BF%BB%E8%AD%AF">&#x7FFB;&#x8B6F;</h3>
+<ul>
+<li><a href="http://camsong.github.io/redux-in-chinese/" target="_blank">&#x4E2D;&#x6587;&#x6587;&#x6863;</a> &#x2014; Chinese</li>
+<li><a href="https://github.com/chentsulin/redux" target="_blank">&#x7E41;&#x9AD4;&#x4E2D;&#x6587;&#x6587;&#x4EF6;</a> &#x2014; Traditional Chinese</li>
+<li><a href="https://github.com/rajdee/redux-in-russian" target="_blank">Redux in Russian</a> &#x2014; Russian</li>
+</ul>
+<h2 id="%E6%9B%B4%E5%A4%9A">&#x66F4;&#x591A;</h2>
+<p><a href="https://github.com/xgrommx/awesome-redux" target="_blank">Awesome Redux</a> &#x662F;&#x4E00;&#x500B;&#x5EE3;&#x6CDB;&#x7684; Redux &#x76F8;&#x95DC; repositories &#x7684;&#x6E05;&#x55AE;&#x3002;
+<a href="https://github.com/markerikson/react-redux-links" target="_blank">React-Redux Links</a> &#x662F;&#x4E00;&#x500B; React, Redux, ES6&#x7B49;&#x7B49;&#x7684;&#x9AD8;&#x54C1;&#x8CEA;&#x6587;&#x7AE0;&#x3001;&#x6559;&#x5B78;&#x3001;&#x76F8;&#x95DC;&#x5167;&#x5BB9;&#x7684;&#x641C;&#x96C6;&#x6E05;&#x55AE;&#x3002;</p>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../../docs/introduction/PriorArt.html" class="navigation navigation-prev " aria-label="Previous page: 先前技術"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../../docs/introduction/Examples.html" class="navigation navigation-next " aria-label="Next page: 範例"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../../../_book/gitbook/app.js"></script>
+
+    
+    <script src="../../../_book/gitbook/plugins/gitbook-plugin-edit-link/plugin.js"></script>
+    
+
+    
+    <script src="../../../_book/gitbook/plugins/gitbook-plugin-github/plugin.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"fontSettings":{"theme":null,"family":"sans","size":2},"edit-link":{"base":"https://github.com/chentsulin/redux/tree/new-doc-zh-tw","label":"Edit This Page"},"github":{"url":"https://github.com/chentsulin/redux/"}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>
