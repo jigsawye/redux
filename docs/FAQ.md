@@ -4,17 +4,17 @@
 
 ### 我應該什麼時候使用 Redux？
 
-Pete Hunt，是 React 早期的 contributor，他說：
+早期的 React contributor 之一，Pete Hunt 說：
 
-> 你會知道你哪時候需要 Flux，如果你不確定你是否需要，那就是不需要了。
+> 你會知道你哪時候需要 Flux。如果你不確定你是否需要，那就是不需要了。
 
 同樣的，Redux 的 creator Dan Abramov 這麼說：
 
-> 我只是想要修改這個：不要使用 Redux，直到你在 vailla React 發生了問題。
+> 我會想要修改程：不要使用 Redux，直到你在原生的 React 發生了問題。
 
-在一般情況下，使用 Redux 情況是在當你有合理的資料會隨著時間的推移而改變，你需要真相的唯一來源，而且你要找到方法，像是保持所有在頂層的 React component state 不再是足夠的。
+一般來說，在當你有合理的資料量會隨著時間的推移而改變時使用 Redux，你需要真相的唯一來源，而且你發現像是把所有東西保存在頂層 React component 的 state 之類的方法不再是足夠的。
 
-#### 進一步的資訊
+#### 更多資訊
 **文件**
 - [簡介：動機](introduction/Motivation.md)
 
