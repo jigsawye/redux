@@ -12,7 +12,7 @@
 
 > 我會想要修改成：不要使用 Redux，直到你在原生的 React 發生了問題。
 
-一般來說，在當你有合理的資料量會隨著時間的推移而改變時使用 Redux，你需要真相的唯一來源，而且你發現像是把所有東西保存在頂層 React component 的 state 之類的方法不再是足夠的。
+一般來說，在當你有合理的資料量會隨著時間的推移而改變時使用 Redux，你需要唯一的資料來源，而且你發現像是把所有東西保存在頂層 React component 的 state 之類的方法不再是足夠的。
 
 #### 更多資訊
 **文件**
@@ -20,24 +20,24 @@
 
 **討論**
 - [React How-To](https://github.com/petehunt/react-howto)
-- [Twitter - Don't use Redux until...](https://twitter.com/dan_abramov/status/699241546248536064)
-- [The Case for Flux](https://medium.com/swlh/the-case-for-flux-379b7d1982c6)
-- [Stack Overflow - Why use Redux over Facebook Flux?](http://stackoverflow.com/questions/32461229/why-use-redux-over-facebook-flux)
-- [Stack Overflow - Why should I use Redux in this example?](http://stackoverflow.com/questions/35675339/why-should-i-use-redux-in-this-example)
-- [Stack Overflow - What could be the downsides of using Redux instead of Flux?](http://stackoverflow.com/questions/32021763/what-could-be-the-downsides-of-using-redux-instead-of-flux)
+- [Twitter - 不要使用 Redux，直到...](https://twitter.com/dan_abramov/status/699241546248536064)
+- [Flux 的案例](https://medium.com/swlh/the-case-for-flux-379b7d1982c6)
+- [Stack Overflow - 為什麼 Redux 會超越 Facebook 的 Flux？ Flux?](http://stackoverflow.com/questions/32461229/why-use-redux-over-facebook-flux)
+- [Stack Overflow - 為什麼我應該要在這個範例使用 Redux？](http://stackoverflow.com/questions/35675339/why-should-i-use-redux-in-this-example)
+- [Stack Overflow - 使用 Redux 而不是 Flux，缺點可能是什麼？](http://stackoverflow.com/questions/32021763/what-could-be-the-downsides-of-using-redux-instead-of-flux)
 
 ### Redux 只能用在 React 嗎？
 
-在任何的 UI 層，Redux 可以被用來當作資料儲存。最常見的就是被用在 React，但可以被 bind 用在 Angular、Vue、Mithril，甚至更多。Redux 只是提供一個訂閱的機制，它可以被用在任何其他的程式碼。
+在任何的 UI 層，Redux 可以被用來當作資料儲存。最常見的就是被用在 React，除此之外還可用在 Angular、Vue、Mithril 等等。Redux 只是提供一個訂閱的機制，它可以被用在任何其他的程式碼。
 
 
-### 我需要特定的建立工具來使用 Redux 嗎？
+### 我需要特定的建構工具來使用 Redux 嗎？
 
-Redux 是由 ES6 所撰寫的，並建立於 Webpack 和 Babel。然而，它應該是可以用在任何 JavaScript 建立過程中。還有一個是 UMD 版本，可以不需要任何建立工具就可以使用。[counter-vanilla](https://github.com/reactjs/redux/tree/master/examples/counter-vanilla) 範例透過引用 Redux 的 script 來示範使用 ES5 來撰寫 Redux。像是這個 Pull Request 加入了這段話：
+Redux 是由 ES6 所撰寫的，並建立於 Webpack 和 Babel。然而，它應該是可以用在任何 JavaScript 建構環境。還有一個是 UMD 版本，可以不需要任何建構工具就可以使用。[counter-vanilla](https://github.com/reactjs/redux/tree/master/examples/counter-vanilla) 示範透過 script 標籤引入 Redux 並使用基本的 ES5 來撰寫。就如同此 Pull Request 所加入的一段話：
 
-> 新的 Counter Vanilla example 範例針對 Redux 普遍的誤解需要 Webpack、React、hot reloading、sagas、 action creators、constants、Babel、npm、CSS modules、decorators、fluent Latin、一個 Egghead 的訂閱、一個 PhD，或是一個超過預期的 O.W.L. 水準。
+> 新的 Counter 原生範例針對 Redux 普遍的誤解需要 Webpack、React、hot reloading、sagas、action creators、constants、Babel、npm、CSS modules、decorators、fluent Latin、一個 Egghead 的訂閱、一個 PhD，或是一個超過預期的 O.W.L. 水準。
 
-> 不是，只需要 HTML 還有一些 `<script>` tag 的引入，簡單的透過 DOM 來操作就可以了。Enjoy！
+> 以上皆非，只需要 HTML 還有一些 `<script>` tag 的引入，簡單的透過 DOM 來操作就可以了。Enjoy！
 
 
 ## Reducers
@@ -83,30 +83,30 @@ Redux store 建議的結構是透過 key 來拆分成多個 「slice」或「dom
 
 ### 我一定要把我所有的 state 放入 Redux 嗎？我應該使用 React 的 setState 嗎？
 
-這沒有「正確」的答案。有些使用者喜歡將每個單一的資料部份放入 Redux，來管理完全序列化以及在任何時候都可以控制應用程式的版本。O有些人則偏好 non-critical 或 UI state，像是「目前打開的下拉選單」，內部 component 的內部 state。其實只要找到一個你覺得平衡的方式就可以了。
+這沒有「正確」的答案。有些使用者喜歡將每個單一的資料部份放入 Redux，來管理完全序列化以及在任何時候都可以控制應用程式的版本。有些人則偏好 non-critical 或 UI state，像是「目前打開的下拉選單」，內部 component 的內部 state。其實只要找到一個你覺得平衡的方式就可以了。
 
 在 community 有各種大量不同的實作，來替代每個 component 的 state 儲存到 Redux 的 store 方法，像是 [redux-ui](https://github.com/tonyhb/redux-ui), [redux-component](https://github.com/tomchentw/redux-component)、[redux-react-local](https://github.com/threepointone/redux-react-local)，還有更多其他不同實作。
 
 #### 更多資訊
 **討論**
 - [#159 - Investigate using Redux for pseudo-local component state](https://github.com/reactjs/redux/issues/159)
-- [#1098 - Using Redux in reusable React component](https://github.com/reactjs/redux/issues/1098)
-- [#1287 - How to choose between Redux's store and React's state?](https://github.com/reactjs/redux/issues/1287)
-- [#1385 - What are the disadvantages of storing all your state in a single immutable atom?](https://github.com/reactjs/redux/issues/1385)
-- [Stack Overflow - Why is state all in one place, even state that isn't global?](http://stackoverflow.com/questions/35664594/redux-why-is-state-all-in-one-place-even-state-that-isnt-global)
-- [Stack Overflow - Should all component state be kept in Redux store?](http://stackoverflow.com/questions/35328056/react-redux-should-all-component-states-be-kept-in-redux-store)
+- [#1098 - 在可重複使用的 React component 使用 Redux](https://github.com/reactjs/redux/issues/1098)
+- [#1287 - 如何在 Redux 的 store 和 React 的 state 之間做選擇？](https://github.com/reactjs/redux/issues/1287)
+- [#1385 - 將你所有的 state 儲存在單一的不可變 atom 缺點是什麼？](https://github.com/reactjs/redux/issues/1385)
+- [Stack Overflow - 為什麼 state 都在同一個地方，state 不是應該在全域嗎？](http://stackoverflow.com/questions/35664594/redux-why-is-state-all-in-one-place-even-state-that-isnt-global)
+- [Stack Overflow - 所有的 component state 都應該要保留在 Redux 的 store 嗎？](http://stackoverflow.com/questions/35328056/react-redux-should-all-component-states-be-kept-in-redux-store)
 
 
 ### 我可以在 store state 內放置 function、promise、或其他非序列的項目嗎？
 
-強烈建議你在 store 只放置簡單的序列化的物件、陣列、還有 primitives。在_技術上_可以新增非序列的項目到你的 store，但是這麼做會打破不可變的原則還有 store 儲存的內容。
+強烈建議你在 store 只放置簡單序列化的物件、陣列、還有 primitives。在_技術上_可以新增非序列的項目到你的 store，但是這麼做會打破不可變的原則還有 store 儲存的內容。
 
 #### 更多資訊
 **討論**
-- [#1248 - Is it ok and possible to store a react component in a reducer?](https://github.com/reactjs/redux/issues/1248)
-- [#1279 - Have any suggestions for where to put a Map Component in Flux?](https://github.com/reactjs/redux/issues/1279)
-- [#1390 - Component Loading](https://github.com/reactjs/redux/issues/1390)
-- [#1407 - Just sharing a great base class](https://github.com/reactjs/redux/issues/1407)
+- [#1248 - 在 reducer 內可以 store 一個 react component 嗎？](https://github.com/reactjs/redux/issues/1248)
+- [#1279 - 在 Flux 中，有沒有將 Map Component 放在哪裡的建議？](https://github.com/reactjs/redux/issues/1279)
+- [#1390 - Component 載入](https://github.com/reactjs/redux/issues/1390)
+- [#1407 - 只分享一個重要的基本類別](https://github.com/reactjs/redux/issues/1407)
 
 
 ### 我要如何在我的 state 組織巢狀化和重複的資料？
@@ -116,16 +116,16 @@ Redux store 建議的結構是透過 key 來拆分成多個 「slice」或「dom
 
 #### 更多資訊
 **文件**
-- [Advanced: Async Actions](advanced/AsyncActions.md)
-- [Examples: Real World example](introduction/Examples.html#real-world)
+- [進階：非同步 Actions](advanced/AsyncActions.md)
+- [範例：Real World 範例](introduction/Examples.html#real-world)
 
 
 **討論**
-- [#316 - How to create nested reducers?](https://github.com/reactjs/redux/issues/316)
-- [#815 - Working with Data Structures](https://github.com/reactjs/redux/issues/815)
-- [#946 - Best way to update related state fields with split reducers?](https://github.com/reactjs/redux/issues/946)
-- [#994 - How to cut the boilerplate when updating nested entities?](https://github.com/reactjs/redux/issues/994)
-- [#1255 - Normalizr usage with nested objects in React/Redux](https://github.com/reactjs/redux/issues/1255)
+- [#316 - 如何建立巢狀的 reducer？](https://github.com/reactjs/redux/issues/316)
+- [#815 - 處理資料結構](https://github.com/reactjs/redux/issues/815)
+- [#946 - 使用拆分的 reducer 來更新相關 state 最好的方法？](https://github.com/reactjs/redux/issues/946)
+- [#994 - 當更新巢狀的實體時，如何減少 boilerplate？](https://github.com/reactjs/redux/issues/994)
+- [#1255 - 在 React 和 Redux 中，Normalizr 具有巢狀化物件的用法](https://github.com/reactjs/redux/issues/1255)
 
 
 
@@ -428,7 +428,7 @@ Redux 不會 store action 本身的歷史記錄。然而，Redux DevTools 可以
 - [Gist - state mutations](https://gist.github.com/amcdnl/7d93c0c67a9a44fe5761#gistcomment-1706579)
 - [Pros and Cons of Using Immutability with React](http://reactkungfu.com/2015/08/pros-and-cons-of-using-immutability-with-react-js/)
 
-### 為什麼我的 componenty 時常 re-rendering？
+### 為什麼我的 component 時常 re-rendering？
 
 React-Redux 實作了許多優化來確保你實際的 component 只有當必要時才重新 render。傳送到 `connect` 的 `mapStateToProps` 和 `mapDispatchToProps` 參數，在產生 combine props 物件時，其中之一會進行 shallow equality 的檢查。不幸的是，shallow equality 沒辦法幫助在每次 `mapStateToProps` 被呼叫時，新的陣列和物件實例被建立的情況。一個典型的例子可能是 map 所有陣列裡的 IDs 以及回傳對應到的參考物件，像是：
 
