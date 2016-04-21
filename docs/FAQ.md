@@ -56,27 +56,27 @@ Redux store 建議的結構是透過 key 來拆分成多個 「slice」或「dom
 
 #### 更多資訊
 **文件**
-- [API: combineReducers](api/combineReducers.md)
+- [API：combineReducers](api/combineReducers.md)
 
 **討論**
-- [#601 - A concern on combineReducers, when an action is related to multiple reducers](https://github.com/reactjs/redux/issues/601)
-- [#1400 - Is passing top-level state object to branch reducer an anti-pattern?](https://github.com/reactjs/redux/issues/1400)
-- [Stack Overflow - Accessing other parts of the state when using combined reducers?](http://stackoverflow.com/questions/34333979/accessing-other-parts-of-the-state-when-using-combined-reducers)
-- [Stack Overflow - Reducing an entire subtree with redux combineReducers](http://stackoverflow.com/questions/34427851/reducing-an-entire-subtree-with-redux-combinereducers)
-- [Sharing State Between Redux Reducers](https://invalidpatent.wordpress.com/2016/02/18/sharing-state-between-redux-reducers/)
+- [#601 - 當一個 action 與多個 reducers 有關時，在 combineReducers 所要關注的問題](https://github.com/reactjs/redux/issues/601)
+- [#1400 - 傳送頂層 state 物件到其他分支的 reducer 是一個 anti-pattern 嗎？](https://github.com/reactjs/redux/issues/1400)
+- [Stack Overflow - 當使用 combine reducers，可以存取其他部分的 state 嗎？](http://stackoverflow.com/questions/34333979/accessing-other-parts-of-the-state-when-using-combined-reducers)
+- [Stack Overflow - Reduce 整個 subtree 與 redux combineReducer](http://stackoverflow.com/questions/34427851/reducing-an-entire-subtree-with-redux-combinereducers)
+- [在 Redux Reducer 間共用 State](https://invalidpatent.wordpress.com/2016/02/18/sharing-state-between-redux-reducers/)
 
 
 ### 我一定要使用 switch 條件式來處理 action 嗎？
 
-不是的，你可以使用任何你想要的方式在 reducer 中來回應 action。switch 條件式只是最常見的方法，比 if 條件式來的好，透過查詢 function 的列表，或者是在抽象過程中建立一個 function
+不是的，你可以使用任何你想要的方式在 reducer 中來應對 action。switch 條件式只是最常見的方法，比 if 條件式來的好，透過查詢 function 的列表，或者是在抽象過程中建立一個 function
 
 #### 更多資訊
 **文件**
-- [Recipes: Reducing Boilerplate](recipes/ReducingBoilerplate.md)
+- [Recipes：Reducing Boilerplate](recipes/ReducingBoilerplate.md)
 
 **討論**
-- [#883 - take away the huge switch block](https://github.com/reactjs/redux/issues/883)
-- [#1167 - Reducer without switch](https://github.com/reactjs/redux/issues/1167)
+- [#883 - 帶著龐大的 switch block](https://github.com/reactjs/redux/issues/883)
+- [#1167 - Reducer 沒有 switch](https://github.com/reactjs/redux/issues/1167)
 
 
 ## 組織 State
@@ -89,7 +89,7 @@ Redux store 建議的結構是透過 key 來拆分成多個 「slice」或「dom
 
 #### 更多資訊
 **討論**
-- [#159 - Investigate using Redux for pseudo-local component state](https://github.com/reactjs/redux/issues/159)
+- [#159 - 探討使用 Redux 對於 pseudo-local component state](https://github.com/reactjs/redux/issues/159)
 - [#1098 - 在可重複使用的 React component 使用 Redux](https://github.com/reactjs/redux/issues/1098)
 - [#1287 - 如何在 Redux 的 store 和 React 的 state 之間做選擇？](https://github.com/reactjs/redux/issues/1287)
 - [#1385 - 將你所有的 state 儲存在單一的不可變 atom 缺點是什麼？](https://github.com/reactjs/redux/issues/1385)
@@ -137,18 +137,19 @@ Redux store 建議的結構是透過 key 來拆分成多個 「slice」或「dom
 
 正如其他的幾個問題，在一個頁面中它是_可以_建立多個不同的 Redux store，但是預期的模式只會有一個單一的 store。然而，擁有單一的 store 可以使用 Redux DevTools，讓不變和 rehydrate 的資料更簡單，並簡化了訂閱的邏輯。
 
-同樣的，你同時_可以_直接引入你的 store 參考實例，但這不是 Redux 推薦的模式。對於 React 使用方式，透過 React-Redux `connect()` function 產生包覆的 class 來實際的尋找 `props.store`，但是最好的方式是在你的頂部 component 使用一個 `<Provider store={store} />`，讓 Reac-Redux 去擔心你的 store。直接引入 store 也很難在伺服器端進行 render。
+同樣的，你同時_可以_直接引入你的 store 參考實例，但這不是 Redux 推薦的模式。對於 React 使用方式，透過 React-Redux `connect()` function 產生包覆的 class 來實際的尋找 `props.store`，但是最好的方式是在你的頂部 component 使用一個 `<Provider store={store} />`，讓 React-Redux 去擔心你的 store。直接引入 store 也很難在伺服器端進行 render。
+
 
 
 #### 更多資訊
 **文件**
-- [API: Store](api/Store.md)
+- [API：Store](api/Store.md)
 
 
 **討論**
-- [#1346 - Is it bad practice to just have a 'stores' directory?](https://github.com/reactjs/redux/issues/1436)
-- [Stack Overflow - Redux multiple stores, why not?](http://stackoverflow.com/questions/33619775/redux-multiple-stores-why-not)
-- [Stack Overflow - Accessing Redux state in an action creator](http://stackoverflow.com/questions/35667249/accessing-redux-state-in-an-action-creator)
+- [#1346 - 有一個「stores」的目錄是不好的做法嗎？](https://github.com/reactjs/redux/issues/1436)
+- [Stack Overflow - Redux 多個 store，有何不可？](http://stackoverflow.com/questions/33619775/redux-multiple-stores-why-not)
+- [Stack Overflow - 在一個 action creatro 存取 Redux state](http://stackoverflow.com/questions/35667249/accessing-redux-state-in-an-action-creator)
 
 
 ### 是不是可以有多個 middleware 鏈在我的 store enhancer？在 middleware function 的「next」和「dispatch」的區別是什麼？
@@ -159,34 +160,34 @@ Redux middleware 的行為像是一個連結清單。每個 middleware function 
 
 #### 更多資訊
 **文件**
-- [Advanced: Middleware](advanced/Middleware.md)
-- [API: applyMiddleware](api/applyMiddleware.md)
+- [進階：Middleware](advanced/Middleware.md)
+- [API：applyMiddleware](api/applyMiddleware.md)
 
 **討論**
-- [#1051 - Shortcomings of the current applyMiddleware and composing createStore](https://github.com/reactjs/redux/issues/1051)
-- [Understanding Redux Middleware](https://medium.com/@meagle/understanding-87566abcfb7a)
-- [Exploring Redux Middleware](http://blog.krawaller.se/posts/exploring-redux-middleware/)
+- [#1051 - 目前 applyMiddleware 和 createStore compse 的缺點](https://github.com/reactjs/redux/issues/1051)
+- [理解 Redux Middleware](https://medium.com/@meagle/understanding-87566abcfb7a)
+- [探索 Redux Middleware](http://blog.krawaller.se/posts/exploring-redux-middleware/)
 
 
 ### 我要如何只訂閱部份的 state？我可以取得 dispatch action 當做訂閱的一部分嗎？
 
-Redux 提供了 `store.subscribe` 方法來通知 listeners store 已經更新。Listener callbacks 不會將目前取得的 state 當作參數 - 他只是一個指出_那些_ state 已經改變。訂閱者可以呼叫 `getState()` 來取得目前的值。
+Redux 提供了 `store.subscribe` 方法來通知 listeners store 已經更新。Listener callbacks 不會將目前取得的 state 當作參數 - 他只是指出_那些_ state 已經改變。訂閱者可以呼叫 `getState()` 來取得目前的值。
 
-這個 API 被作為一個 low-level 的 primitive 沒有任何的依賴或是複雜性，而且可以用在建立 high-level 的訂閱邏輯。像是 React-Redux 的 UI binding 可以建立一個訂閱給每個被連結的 component。It is also possible to write functions that can intelligently compare the old state vs the new state, 它也是可以撰寫 function，而且可以聰明地比較舊的和新的 state，如果某些 state 改變了也可以執行附帶的邏輯。範例包含了 [redux-watch](https://github.com/jprichardson/redux-watch) 和 [redux-subscribe](https://github.com/ashaffer/redux-subscribe)，提供不同的方法來指定訂閱和處理變化。
+這個 API 被作為一個底層的 primitive 沒有任何的依賴或是複雜性，而且可以用在建立頂層的訂閱邏輯。像是 React-Redux 的 UI binding 可以建立一個訂閱給每個被連結的 component。它也可以撰寫 function，而且可以聰明地比較舊的和新的 state，如果某些 state 改變了也可以執行附帶的邏輯。範例包含了 [redux-watch](https://github.com/jprichardson/redux-watch) 和 [redux-subscribe](https://github.com/ashaffer/redux-subscribe)，提供不同的方法來指定訂閱和處理變化。
 
 為了排除特殊的情況和簡化實作的附加功能，像是 `Redux DevTools`，新的 state 不會傳送到 listeners。另外，訂閱者的目的是反應 state 本身，而不是 action，如果需要處理 action 可以使用 Middleware。
 
 #### 更多資訊
 **文件**
-- [Basics: Store](basics/Store.md)
-- [API: Store](api/Store.md)
+- [基礎：Store](basics/Store.md)
+- [API：Store](api/Store.md)
 
 **討論**
-- [#303 - subscribe API with state as an argument](https://github.com/reactjs/redux/issues/303)
-- [#580 - Is it possible to get action and state in store.subscribe?](https://github.com/reactjs/redux/issues/580)
-- [#922 - Proposal: add subscribe to middleware API](https://github.com/reactjs/redux/issues/922)
-- [#1057 - subscribe listener can get action param?](https://github.com/reactjs/redux/issues/1057)
-- [#1300 - Redux is great but major feature is missing](https://github.com/reactjs/redux/issues/1300)
+- [#303 - 訂閱 API 和 state 作為參數](https://github.com/reactjs/redux/issues/303)
+- [#580 - 在 store.subscribe 是可以取得 action 和 state 嗎？](https://github.com/reactjs/redux/issues/580)
+- [#922 - 建議：加入訂閱到你的 middleware API](https://github.com/reactjs/redux/issues/922)
+- [#1057 - 訂閱 listener 可以取得 action 的參數嗎？](https://github.com/reactjs/redux/issues/1057)
+- [#1300 - Redux 主要的功能是 missing](https://github.com/reactjs/redux/issues/1300)
 
 
 ## Actions
@@ -197,18 +198,18 @@ Redux 提供了 `store.subscribe` 方法來通知 listeners store 已經更新�
 
 封裝和集中常用的程式碼部份是程式設計中的一個關鍵概念。雖然每個部份可能都要手動建立 action 物件，還要手動撰寫每個「type」的值，定義可複用的常數讓你維護程式碼更容易。
 
-
 #### 更多資訊
 **文件**
 - [Reducing Boilerplate](http://rackt.github.io/redux/docs/recipes/ReducingBoilerplate.html#actions)
 
+
 **討論**
-- [#384 - Recommend that Action constants be named in the past tense](https://github.com/reactjs/redux/issues/384)
-- [#628 - Solution for simple action creation with less boilerplate](https://github.com/reactjs/redux/issues/628)
-- [#1024 - Proposal: Declarative reducers](https://github.com/reactjs/redux/issues/1024)
-- [#1167 - Reducer without switch](https://github.com/reactjs/redux/issues/1167)
-- [Stack Overflow - Why do you need 'Actions' as data in Redux?](http://stackoverflow.com/q/34759047/62937)
-- [Stack Overflow - What is the point of the constants in Redux?](http://stackoverflow.com/q/34965856/62937)
+- [#384 - 推薦 Action 常數使用過去時態來命名](https://github.com/reactjs/redux/issues/384)
+- [#628 - 簡單的 action create 和更少的 boilerplate 的解決方案](https://github.com/reactjs/redux/issues/628)
+- [#1024 - 建議：宣告 reducer](https://github.com/reactjs/redux/issues/1024)
+- [#1167 - Reducer 沒有 switch](https://github.com/reactjs/redux/issues/1167)
+- [Stack Overflow - 在 Redux 為什麼需要將「Action」當作資料？](http://stackoverflow.com/q/34759047/62937)
+- [Stack Overflow - 在 Redux 常數的點是什麼？](http://stackoverflow.com/q/34965856/62937)
 
 
 ### reducer 和 action 之間一定是一對一互相對應嗎？
@@ -217,13 +218,14 @@ Redux 提供了 `store.subscribe` 方法來通知 listeners store 已經更新�
 
 #### 更多資訊
 **文件**
-- [Basics: Reducers](basics/Reducers.md)
+- [基礎：Reducers](basics/Reducers.md)
+
 
 **討論**
-- [Twitter - most common Redux misconception](https://twitter.com/dan_abramov/status/682923564006248448)
-- [#1167 - Reducer without switch](https://github.com/reactjs/redux/issues/1167)
-- [Reduxible #8 - Reducers and action creators aren't a one-to-one mapping](https://github.com/reduxible/reduxible/issues/8)
-- [Stack Overflow - Can I dispatch multiple actions without Redux Thunk middleware?](http://stackoverflow.com/questions/35493352/can-i-dispatch-multiple-actions-without-redux-thunk-middleware/35642783)
+- [Twitter - Redux 最常見的誤解](https://twitter.com/dan_abramov/status/682923564006248448)
+- [#1167 - Reducer 沒有 switch](https://github.com/reactjs/redux/issues/1167)
+- [Reduxible #8 - Reducer 和 action creator 不是一對一的對應](https://github.com/reduxible/reduxible/issues/8)
+- [Stack Overflow - 我可以 dispatch 多個 action 而不需要 Redux Thunk middleware 嗎？](http://stackoverflow.com/questions/35493352/can-i-dispatch-multiple-actions-without-redux-thunk-middleware/35642783)
 
 ### 我如何表達像是呼叫 AJAX 的 「side eeffects」？為什麼我們需要像是「action creators」、「thunks」、以及「middleware」來執行非同步的行為？
 
@@ -240,26 +242,26 @@ Redux 的靈感來自於 functional programming，它是可以直接使用的，
 
 #### 更多資訊
 **文件**
-- [Advanced: Async Actions](advanced/AsyncActions.md)
-- [Advanced: Async Flow](advanced/AsyncFlow.md)
-- [Advanced: Middleware](advanced/Middleware.md)
+- [進階：Async Actions](advanced/AsyncActions.md)
+- [進階：Async Flow](advanced/AsyncFlow.md)
+- [進階：Middleware](advanced/Middleware.md)
 
 **討論**
-- [#291 - Trying to put API calls in the right place](https://github.com/reactjs/redux/issues/291)
-- [#455 - Modeling side effects](https://github.com/reactjs/redux/issues/455)
-- [#533 - Simpler introduction to async action creators](https://github.com/reactjs/redux/issues/533)
-- [#569 - Proposal: API for explicit side effects](https://github.com/reactjs/redux/pull/569)
-- [#1139 - An alternative side effect model based on generators and sagas](https://github.com/reactjs/redux/issues/1139)
-- [Stack Overflow - Why do we need middleware for async flow in Redux?](http://stackoverflow.com/questions/34570758/why-do-we-need-middleware-for-async-flow-in-redux)
-- [Stack Overflow - How to dispatch a Redux action with a timeout?](http://stackoverflow.com/questions/35411423/how-to-dispatch-a-redux-action-with-a-timeout/35415559)
-- [Stack Overflow - Where should I put synchronous side effects linked to actions in redux?](http://stackoverflow.com/questions/32982237/where-should-i-put-synchronous-side-effects-linked-to-actions-in-redux/33036344)
-- [Stack Overflow - How to handle complex side-effects in Redux?](http://stackoverflow.com/questions/32925837/how-to-handle-complex-side-effects-in-redux/33036594)
-- [Stack Overflow - How to unit test async Redux actions to mock ajax response](http://stackoverflow.com/questions/33011729/how-to-unit-test-async-redux-actions-to-mock-ajax-response/33053465)
-- [Stack Overflow - How to fire AJAX calls in response to the state changes with Redux?](http://stackoverflow.com/questions/35262692/how-to-fire-ajax-calls-in-response-to-the-state-changes-with-redux/35675447)
-- [Reddit - Help performing Async API calls with Redux-Promise Middleware.](https://www.reddit.com/r/reactjs/comments/469iyc/help_performing_async_api_calls_with_reduxpromise/)
-- [Twitter - possible comparison between sagas, loops, and other approaches](https://twitter.com/dan_abramov/status/689639582120415232)
-- [Redux Side-Effects and You](https://medium.com/@fward/redux-side-effects-and-you-66f2e0842fc3)
-- [Pure functionality and side effects in Redux](http://blog.hivejs.org/building-the-ui-2/)
+- [#291 - 嘗試把呼叫 API 放在正確的地方](https://github.com/reactjs/redux/issues/291)
+- [#455 - 塑造 side effects](https://github.com/reactjs/redux/issues/455)
+- [#533 - 簡單介紹非同步 action creator](https://github.com/reactjs/redux/issues/533)
+- [#569 - 建議：API 對於顯式的 side effects](https://github.com/reactjs/redux/pull/569)
+- [#1139 - 基於 generators 和 sagas 替代 side effect model](https://github.com/reactjs/redux/issues/1139)
+- [Stack Overflow - 在 Redux 為什麼我們需要 middleware 來處理非同步的流程？](http://stackoverflow.com/questions/34570758/why-do-we-need-middleware-for-async-flow-in-redux)
+- [Stack Overflow - 如何 dispatch 一個 timeout 的 Redux action？](http://stackoverflow.com/questions/35411423/how-to-dispatch-a-redux-action-with-a-timeout/35415559)
+- [Stack Overflow - 在 Redux 哪邊應該是我放置同步 side effects 連結到 action 的地方？](http://stackoverflow.com/questions/32982237/where-should-i-put-synchronous-side-effects-linked-to-actions-in-redux/33036344)
+- [Stack Overflow - 在 Redux 如何處理 side-effects？](http://stackoverflow.com/questions/32925837/how-to-handle-complex-side-effects-in-redux/33036594)
+- [Stack Overflow - 如何在單元測試非同步 Redux action 來 mock ajax 的 回應？](http://stackoverflow.com/questions/33011729/how-to-unit-test-async-redux-actions-to-mock-ajax-response/33053465)
+- [Stack Overflow - 如何在 Redux 回應 state 的改變來觸發呼叫 AJAX？](http://stackoverflow.com/questions/35262692/how-to-fire-ajax-calls-in-response-to-the-state-changes-with-redux/35675447)
+- [Reddit - H說明執行非同步 API 呼叫與 Redux-Promise Middleware。](https://www.reddit.com/r/reactjs/comments/469iyc/help_performing_async_api_calls_with_reduxpromise/)
+- [Twitter - 在 sagas、loops、以及其他方法之間的比較](https://twitter.com/dan_abramov/status/689639582120415232)
+- [Redux Side-Effects 和你](https://medium.com/@fward/redux-side-effects-and-you-66f2e0842fc3)
+- [在 Redux 的 pure functionality 和 side effects](http://blog.hivejs.org/building-the-ui-2/)
 
 ### 我應該從 action creator 連續 dispatch 多個 action 嗎？
 
@@ -270,11 +272,11 @@ Redux 的靈感來自於 functional programming，它是可以直接使用的，
 
 #### 更多資訊
 **討論**
-- [#597 - Valid to dispatch multiple actions from an event handler?](https://github.com/reactjs/redux/issues/597)
-- [#959 - Multiple actions one dispatch?](https://github.com/reactjs/redux/issues/959)
-- [Stack Overflow - Should I use one or several action types to represent this async action?](http://stackoverflow.com/questions/33637740/should-i-use-one-or-several-action-types-to-represent-this-async-action/33816695)
-- [Stack Overflow - Do events and actions have a 1:1 relationship in Redux?](http://stackoverflow.com/questions/35406707/do-events-and-actions-have-a-11-relationship-in-redux/35410524)
-- [Stack Overflow - Should actions be handled by reducers to related actions or generated by action creators themselves?](http://stackoverflow.com/questions/33220776/should-actions-like-showing-hiding-loading-screens-be-handled-by-reducers-to-rel/33226443#33226443)
+- [#597 - 從一個 event handler 有效的 dispatch 多個 action？](https://github.com/reactjs/redux/issues/597)
+- [#959 - 多個 action 在一個 dispatch？](https://github.com/reactjs/redux/issues/959)
+- [Stack Overflow - 我應該使用一個或多個 action type 來表示非同步的 action 嗎？](http://stackoverflow.com/questions/33637740/should-i-use-one-or-several-action-types-to-represent-this-async-action/33816695)
+- [Stack Overflow - 在 Redux 執行事件和 action 是一對一的關係嗎？](http://stackoverflow.com/questions/35406707/do-events-and-actions-have-a-11-relationship-in-redux/35410524)
+- [Stack Overflow - 應該由 reducer action 來處理相關 action 或者由 action creator 本身來產生 action 嗎？](http://stackoverflow.com/questions/33220776/should-actions-like-showing-hiding-loading-screens-be-handled-by-reducers-to-rel/33226443#33226443)
 
 
 ## 程式碼結構
@@ -291,28 +293,28 @@ Redux 的靈感來自於 functional programming，它是可以直接使用的，
 
 #### 更多資訊
 **討論**
-- [#839 - Emphasize defining selectors alongside reducers](https://github.com/reactjs/redux/issues/839)
-- [#943 - Reducer querying](https://github.com/reactjs/redux/issues/943)
-- [React-Boilerplate #27 - Application Structure](https://github.com/mxstbr/react-boilerplate/issues/27)
-- [Stack Overflow - How to structure Redux components/containers](http://stackoverflow.com/questions/32634320/how-to-structure-redux-components-containers/32921576)
-- [Redux Best Practices](https://medium.com/lexical-labs-engineering/redux-best-practices-64d59775802e)
-- [Rules For Structuring (Redux) Applications ](http://jaysoo.ca/2016/02/28/organizing-redux-application/)
+- [#839 - 強調與 reducer 一起定義 selector ](https://github.com/reactjs/redux/issues/839)
+- [#943 - Reducer 查詢](https://github.com/reactjs/redux/issues/943)
+- [React-Boilerplate #27 - 應用程式結構](https://github.com/mxstbr/react-boilerplate/issues/27)
+- [Stack Overflow - 如何建構 Redux components 和 containers？](http://stackoverflow.com/questions/32634320/how-to-structure-redux-components-containers/32921576)
+- [Redux 最佳作法](https://medium.com/lexical-labs-engineering/redux-best-practices-64d59775802e)
+- [用於結構化 (Redux) 應用程式的規則](http://jaysoo.ca/2016/02/28/organizing-redux-application/)
 
-### 我應該如何將我的 reducer 和 action creator 之間的邏輯拆開？我的「business logic」應該在哪裡？
+### 我應該如何將我的 reducer 和 action creator 之間的邏輯拆開？我的「商業邏輯」應該在哪裡？
 
 邏輯放置的部份沒有一個明確的答案應該在 reducer 或是 action creator。有些開發者偏好「fat」action creator、「thin」reducer，action 可以簡單的將資料 merge 到相對應的 state，其他人則嘗試保持 action，讓它盡可能的簡單，在 action creator 盡量避免使用到 `getState`。
 
 這個討論總結了一個不錯的二分法 ︰
 
-> 現在的問題是要將什麼放在 action creator、什麼要在 reducer 中，以及 fat 和 thin action 物件之間的選擇。如果你把所有的邏輯放在 action creator，fat action 物件基本上是宣告 state 更新的結果。Reducer 是 pure、dumb、新增、移除、更新的這些功能。他們會更容易 compose。但不代表你大部分的 business 邏輯都會在那裡。
+> 現在的問題是要將什麼放在 action creator、什麼要在 reducer 中，以及 fat 和 thin action 物件之間的選擇。如果你把所有的邏輯放在 action creator，fat action 物件基本上是宣告 state 更新的結果。Reducer 是 pure、dumb、新增、移除、更新的這些功能。他們會更容易 compose。但不代表你大部分的商業邏輯都會在那裡。
 > 你如果在 reducer 上放了許多邏輯，你就可以有 thin action 物件，大部分的資料邏輯都在一個地方，但是你的 reducer 會很困難 compose，因為你可能需要來自其他 branch 的資訊。你最後可能有一個很大的 reducer 或是 reducer 帶有其他額外的參數來自上層的 state。
 
 
 #### 更多資訊
 **討論**
-- [#1165 - Where to put business logic / validation?](https://github.com/reactjs/redux/issues/1165)
-- [#1171 - Recommendations for best practices regarding action-creators, reducers, and selectors](https://github.com/reactjs/redux/issues/1171 )
-- [Stack Overflow - Accessing Redux state in an action creator??](http://stackoverflow.com/questions/35667249/accessing-redux-state-in-an-action-creator/35674575)
+- [#1165 - 如何放置商業邏輯和驗證？](https://github.com/reactjs/redux/issues/1165)
+- [#1171 - 關於 action-creators、reducers、和 selectors 最佳做法與建議](https://github.com/reactjs/redux/issues/1171 )
+- [Stack Overflow - 在一個 action creator 存取 Redux state？](http://stackoverflow.com/questions/35667249/accessing-redux-state-in-an-action-creator/35674575)
 
 
 ## 效能
@@ -321,7 +323,7 @@ Redux 的靈感來自於 functional programming，它是可以直接使用的，
 
 依然沒有一個明確的答案，大多數這個時候不應該關注這兩種情況。
 
-一般 Redux 所作的工作分為幾個領域：處理在 middleware 的 action 和 reducer（包含複製不可變得物件來進行更新），在 action 被 dispatch 後通知訂閱者，以及基於 state 的改變來更新 UI component。雖然這些很有_可能_在充滿複雜的情況下變成性能上的問題，但 Redux 的實做本身沒有什麼什麼緩慢和低效的問題。事實上，React-Redux 特別做了大量的優化，減少了不必要的 re-render。
+一般 Redux 所作的工作分為幾個領域：處理在 middleware 的 action 和 reducer（包含複製不可變的物件來進行更新），在 action 被 dispatch 後通知訂閱者，以及基於 state 的改變來更新 UI component。雖然這些很有_可能_在充滿複雜的情況下變成性能上的問題，但 Redux 的實做本身沒有什麼什麼緩慢和低效的問題。事實上，React-Redux 特別做了大量的優化，減少了不必要的重新 render。
 
 在結構當中，Redux 在各個專案和團隊中都工作的非常順利，數百家公司和上千位開發者目前都在使用 Redux，在 NPM 達到一個月幾十萬次的安裝。一位開發者的報告：
 
@@ -329,10 +331,10 @@ Redux 的靈感來自於 functional programming，它是可以直接使用的，
 
 #### 更多資訊
 **討論**
-- [#310 - Who uses Redux?](https://github.com/reactjs/redux/issues/310)
-- [Reddit - What's the best place to keep the initial state?](https://www.reddit.com/r/reactjs/comments/47m9h5/whats_the_best_place_to_keep_the_initial_state/)
-- [Reddit - Help designing Redux state for a single page app](https://www.reddit.com/r/reactjs/comments/48k852/help_designing_redux_state_for_a_single_page/)
-- [Reddit - Redux performance issues with a large state object?](https://www.reddit.com/r/reactjs/comments/41wdqn/redux_performance_issues_with_a_large_state_object/)
+- [#310 - 誰在使用 Redux？](https://github.com/reactjs/redux/issues/310)
+- [Reddit - 保持初始 state 最好的地方是什麼？](https://www.reddit.com/r/reactjs/comments/47m9h5/whats_the_best_place_to_keep_the_initial_state/)
+- [Reddit - 設計 Redux state 一個單頁應用程式的説明](https://www.reddit.com/r/reactjs/comments/48k852/help_designing_redux_state_for_a_single_page/)
+- [Reddit - Redux 的效能 issue 和大型 state 物件？](https://www.reddit.com/r/reactjs/comments/41wdqn/redux_performance_issues_with_a_large_state_object/)
 - [Twitter - Redux scaling](https://twitter.com/NickPresta/status/684058236828266496)
 
 
@@ -340,7 +342,7 @@ Redux 的靈感來自於 functional programming，它是可以直接使用的，
 
 重要的是，注意 Redux store 一個 reducer function。store 傳送目前的 state 和 dispatch action 到一個 reducer function，並讓 reducer 做適當的處理。
 
-很明顯的，將單一的 function 擴充並嘗試處理每個 action 不是這麼容易，簡單來說在於 function 的大小和可讀性，所以要將實際的工作分離成獨立的 function 讓頂層的 reducer 可以呼叫。特別是，共同建議的模式是，有一個獨立的 reducer function 根據指定的 key 負責管理部份的 state 的更新，透過使用提供的 `combineReducers` 工具可以讓程式變得更簡單。但還是強烈建議將你的 store 扁平化、序列化。最後，你可以根據你需要的方式來組織 reducer 邏輯。
+很明顯的，將單一的 function 擴充並嘗試處理每個 action 不是這麼容易，簡單來說在於 function 的大小和可讀性，所以要將實際的工作分離成獨立的 function 讓頂層的 reducer 可以呼叫。特別是，共同建議的模式有一個獨立的 reducer function 根據指定的 key 負責管理部份的 state 的更新，透過使用提供的 `combineReducers` 工具可以讓程式變得更簡單。但還是強烈建議將你的 store 扁平化、序列化。最後，你可以根據你需要的方式來組織 reducer 邏輯。
 
 然而，即便剛好你有許多不同獨立的 reducer，甚至有很深的巢狀 state，reducer 的速度不太可能是一個問題。JavaScript Engine 可以在每秒呼叫並執行大量的 function，你大部份的 reducer 可能都使用 switch 語句，預設上大部分 action 的回應都會回傳存在的 state。
 
@@ -348,15 +350,15 @@ Redux 的靈感來自於 functional programming，它是可以直接使用的，
 
 #### 更多資訊
 **討論**
-- [#912 - Proposal: action filter utility](https://github.com/reactjs/redux/issues/912)
-- [#1303 - Redux Performance with Large Store and frequent updates](https://github.com/reactjs/redux/issues/1303)
-- [Stack Overflow - State in Redux app has the name of the reducer](http://stackoverflow.com/questions/35667775/state-in-redux-react-app-has-a-property-with-the-name-of-the-reducer/35674297)
-- [Stack Overflow - How does Redux deal with deeply nested models?](http://stackoverflow.com/questions/34494866/how-does-redux-deals-with-deeply-nested-models/34495397)
+- [#912 - 建議：action filter 工具](https://github.com/reactjs/redux/issues/912)
+- [#1303 - Redux 效能和頻繁的更新大型的 Store](https://github.com/reactjs/redux/issues/1303)
+- [Stack Overflow - 在 Redux app State 要有 reducer 的名稱](http://stackoverflow.com/questions/35667775/state-in-redux-react-app-has-a-property-with-the-name-of-the-reducer/35674297)
+- [Stack Overflow - Redux 如何處理深層巢狀的 model？](http://stackoverflow.com/questions/34494866/how-does-redux-deals-with-deeply-nested-models/34495397)
 
 
 ### 我需要在我的 reducer 深層複製我的 state 嗎？複製 state 不會導致變慢嗎？
 
-Immutable 的更新 state 一般的意思是說淺層拷貝，而不是深層複製。淺層複製比深層複製來的快，因為較少的物件和欄位被複製，以及可以有效的歸納變動的部份。
+Immutable 的更新 state 一般的意思是說淺層複製，而不是深層複製。淺層複製比深層複製來的快，因為較少的物件和欄位被複製，以及可以有效的歸納變動的部份。
 
 然而，你需要_將_每個受影響的巢狀層面，建立一個複製和更新的物件。雖然這應該不是特別昂貴，這是一個很好的理由為什麼你應該保持 state 的序列化以及淺層複製。
 
@@ -365,45 +367,46 @@ Immutable 的更新 state 一般的意思是說淺層拷貝，而不是深層複
 
 #### 更多資訊
 **討論**
-- [#454 - Handling big states in reducer](https://github.com/reactjs/redux/issues/454)
-- [#758 - Why can't state be mutated?](https://github.com/reactjs/redux/issues/758)
-- [#994 - How to cut the boilerplate when updating nested entities?](https://github.com/reactjs/redux/issues/994)
-- [Twitter - common misconception - deep cloning](https://twitter.com/dan_abramov/status/688087202312491008)
-- [Cloning Objects in Javascript](http://www.zsoltnagy.eu/cloning-objects-in-javascript/)
+- [#454 - 在 reducer 處理大型的 state](https://github.com/reactjs/redux/issues/454)
+- [#758 - 為什麼 state 不能被 mutate？](https://github.com/reactjs/redux/issues/758)
+- [#994 - 當更新巢狀實體時，如何減少 boilerplate？](https://github.com/reactjs/redux/issues/994)
+- [Twitter - 常見的誤解 - 深層 clone](https://twitter.com/dan_abramov/status/688087202312491008)
+- [在 JavaScript 中 Clone 物件](http://www.zsoltnagy.eu/cloning-objects-in-javascript/)
 
 ### 我如何減少 store 更新事件的次數？
 
-Redux 在每次成功 dispatch action 會知訂閱者（意思是，action 已經去改變 store，並透過 reducer 來處理）。在有些情況下，它可能對於減少呼叫多次訂閱者是有幫助的，特別是如果一個 action creator 連續 dispatch 多個不同的 action。在 community 有一些 addons，在大量的 action 被 dispatch 後，提供透過批次的方式來通知訂閱者，像是 [redux-batched-updates](https://github.com/acdlite/redux-batched-updates)、[redux-batched-subscribe](https://github.com/tappleby/redux-batched-subscribe) 或 [redux-batched-actions](https://github.com/tshelburne/redux-batched-actions)。
+Redux 在每次成功 dispatch action 會通知訂閱者（意思是，action 已經去改變 store，並透過 reducer 來處理）。在有些情況下，它可能對於減少呼叫多次訂閱者是有幫助的，特別是如果一個 action creator 連續 dispatch 多個不同的 action。在 community 有一些 addons，在大量的 action 被 dispatch 後，提供透過批次的方式來通知訂閱者，像是 [redux-batched-updates](https://github.com/acdlite/redux-batched-updates)、[redux-batched-subscribe](https://github.com/tappleby/redux-batched-subscribe) 或 [redux-batched-actions](https://github.com/tshelburne/redux-batched-actions)。
 
 #### 更多資訊
 **討論**
-- [#125 - Strategy for avoiding cascading renders](https://github.com/reactjs/redux/issues/125)
-- [#542 - Idea: batching actions](https://github.com/reactjs/redux/issues/542)
+- [#125 - 避免 cascade render 的策略](https://github.com/reactjs/redux/issues/125)
+- [#542 - 方法：batching actions](https://github.com/reactjs/redux/issues/542)
 - [#911 - Batching actions](https://github.com/reactjs/redux/issues/911)
-- [React-Redux #263 - Huge performance issue when dispatching hundreds of actions](https://github.com/reactjs/react-redux/issues/263)
+- [React-Redux #263 - 當 dispatch 數百個 action 巨大的效能 issue](https://github.com/reactjs/react-redux/issues/263)
 
 ### 如果只有「一個 state tree」會造成記憶體上的問題嗎？如果多次 dispatch 許多 action 會佔用記憶體嗎？
 
-首先，在原始記憶體的使用方面，Redux 和其他的 JavaScript libray 沒有什麼不同。唯一的區別是所有的物件參考都被巢狀化成一個 tree，而不是儲存在各個獨立的 model 實例，像是：Backbone。第二，a typical Redux app would probably have somewhat _less_ memory usage than an equivalent Backbone app, 一個典型的 Redux app 記憶體使用 _稍微_ 會比 Backbone app 來的少，因為 Redux 鼓勵你使用純 JavaScript 物件和陣列，而不是建立 Model 和 Collection 的實例。最後，Redux 在每個時間點只有單一 state tree 的參考。根據標準，物件如果不再被 tree 參考將會被垃圾回收。
+首先，在原始記憶體的使用方面，Redux 和其他的 JavaScript libray 沒有什麼不同。唯一的區別是所有的物件參考都被巢狀化成一個 tree，而不是儲存在各個獨立的 model 實例，像是：Backbone。第二，一個典型的 Redux app 記憶體使用 _稍微_ 會比 Backbone app 來的少，因為 Redux 鼓勵你使用純 JavaScript 物件和陣列，而不是建立 Model 和 Collection 的實例。最後，Redux 在每個時間點只有單一 state tree 的參考。根據標準，物件如果不再被 tree 參考將會被垃圾回收。
 
 Redux 不會 store action 本身的歷史記錄。然而，Redux DevTools 可以 store action 所以他們可以被 replay，但是一般只會在開發期間使用，不會使用在上線環境。
 
 #### 更多資訊
 **文件**
-- [Docs: Async Actions](advanced/AsyncActions.md])
+- [文件：非同步 Actions](advanced/AsyncActions.md])
+
 
 **討論**
-- [Stack Overflow - Is there any way to "commit" the state in Redux to free memory?](http://stackoverflow.com/questions/35627553/is-there-any-way-to-commit-the-state-in-redux-to-free-memory/35634004)
-- [Reddit - What's the best place to keep initial state?](https://www.reddit.com/r/reactjs/comments/47m9h5/whats_the_best_place_to_keep_the_initial_state/)
+- [Stack Overflow - 在 Redux 有沒有任何方法來「commit」state 來釋放記憶體？](http://stackoverflow.com/questions/35627553/is-there-any-way-to-commit-the-state-in-redux-to-free-memory/35634004)
+- [Reddit -保持初始 state 的地方是什麼？](https://www.reddit.com/r/reactjs/comments/47m9h5/whats_the_best_place_to_keep_the_initial_state/)
 
 
 
 
 ## React-Redux
 
-### 為什麼我的 compoent 不會 re-rendering，或者是執行我的 mapStateToProps？
+### 為什麼我的 component 不會重新 rendering，或者是執行我的 mapStateToProps？
 
-為什麼 componet 在 action 被 dispatch 後不會 re-render，到目前為止最常見的原因是因為你無意間直接 mutate 或修改你的 state。Redux 期望你的 reducer 更新 state 是「immutably」的，意思是你總是需要複製你的資料，這是有效的，並將你的 state 改變運用到副本。如果你從 reducer 回傳相同的物件，Redux 會假設一切都沒有改變，即使你對內容進行修改。同樣的，React-Redux 透過 `shouldComponentUpdate` 在淺層平等參考來檢查傳入的 props 去嘗試改善效能，如果所有的參考都是相同的，回傳 false 來跳過實際更新你的原始 component。
+為什麼 component 在 action 被 dispatch 後不會重新 render，到目前為止最常見的原因是因為你無意間直接 mutate 或修改你的 state。Redux 期望你的 reducer 更新 state 是「immutably」的，意思是你總是需要複製你的資料，這是有效的，並將你的 state 改變運用到副本。如果你從 reducer 回傳相同的物件，Redux 會假設一切都沒有改變，即使你對內容進行修改。同樣的，React-Redux 透過 `shouldComponentUpdate` 在淺層平等參考來檢查傳入的 props 去嘗試改善效能，如果所有的參考都是相同的，回傳 false 來跳過實際更新你的原始 component。
 
 很重要的是你要記得，每當你更新巢狀的值，你必須在你的 state tree 中回傳任何以上的新副本。如果你有 `state.a.b.c.d`，然你想要更新 `d`，你應該需要回傳 `c`、`b`、`a` 以及 `state` 的新副本。這個 [state tree mutation 關係圖](http://arqex.com/wp-content/uploads/2015/02/trees.png) 表示了如何改變在 tree 深層的 state，需要一路的往上改變。
 
@@ -417,18 +420,18 @@ Redux 不會 store action 本身的歷史記錄。然而，Redux DevTools 可以
 #### 更多資訊
 **文件**
 - [Troubleshooting](Troubleshooting.md)
-- [React-Redux: Troubleshooting](https://github.com/reactjs/react-redux/blob/master/docs/troubleshooting.md)
-- [Recipes: Using the Object Spread Operator](recipes/UsingObjectSpreadOperator.md)
+- [React-Redux：Troubleshooting](https://github.com/reactjs/react-redux/blob/master/docs/troubleshooting.md)
+- [Recipes：使用物件展開運算符](recipes/UsingObjectSpreadOperator.md)
 
 **討論**
-- [#1262 - Immutable data + bad performance](https://github.com/reactjs/redux/issues/1262)
-- [React-Redux #235 - Predicate function for updating component](https://github.com/reactjs/react-redux/issues/235)
-- [React-Redux #291 - Should mapStateToProps be called every time an action is dispatched?](https://github.com/reactjs/react-redux/issues/291)
-- [Stack Overflow - Cleaner/shorter way to update nested state in Redux?](http://stackoverflow.com/questions/35592078/cleaner-shorter-way-to-update-nested-state-in-redux)
+- [#1262 - Immutable 資料 + 不佳的效能](https://github.com/reactjs/redux/issues/1262)
+- [React-Redux #235 - Predicate function 來更新 component](https://github.com/reactjs/react-redux/issues/235)
+- [React-Redux #291 - action 每次被 dispatch 時，mapStateToProps 應該會被呼叫嗎？](https://github.com/reactjs/react-redux/issues/291)
+- [Stack Overflow -  在 Redux 有乾淨或簡短的方式來更新巢狀的 state 嗎？](http://stackoverflow.com/questions/35592078/cleaner-shorter-way-to-update-nested-state-in-redux)
 - [Gist - state mutations](https://gist.github.com/amcdnl/7d93c0c67a9a44fe5761#gistcomment-1706579)
-- [Pros and Cons of Using Immutability with React](http://reactkungfu.com/2015/08/pros-and-cons-of-using-immutability-with-react-js/)
+- [React 使用 Immutability 的利與弊](http://reactkungfu.com/2015/08/pros-and-cons-of-using-immutability-with-react-js/)
 
-### 為什麼我的 component 時常 re-rendering？
+### 為什麼我的 component 時常重新 rendering？
 
 React-Redux 實作了許多優化來確保你實際的 component 只有當必要時才重新 render。傳送到 `connect` 的 `mapStateToProps` 和 `mapDispatchToProps` 參數，在產生 combine props 物件時，其中之一會進行 shallow equality 的檢查。不幸的是，shallow equality 沒辦法幫助在每次 `mapStateToProps` 被呼叫時，新的陣列和物件實例被建立的情況。一個典型的例子可能是 map 所有陣列裡的 IDs 以及回傳對應到的參考物件，像是：
 
@@ -440,7 +443,7 @@ let mapStateToProps = (state) => {
 };
 ```
 
-儘管每次陣列可能有完全相同的參考物件，陣列本身是一個不同的參考，所以 shallow equality 會確認失敗，React-Redux 會 re-render 被包覆的 component。
+儘管每次陣列可能有完全相同的參考物件，陣列本身是一個不同的參考，所以 shallow equality 會確認失敗，React-Redux 會重新 render 被包覆的 component。
 
 透過儲存物件的陣列，使用 reducer 進入到 state，可以解決額外的重新 render，快取和 memoize 使用 Reselect library 來 map 陣列，或是在你的 component 實作 `shouldComponentUpdate` ，使用像是 `_.isEqual` 的 function 做更深入的 props 對照。
 
@@ -451,8 +454,8 @@ let mapStateToProps = (state) => {
 #### 更多資訊
 
 **討論**
-- [Stack Overflow - Can a React-Redux app scale as well as Backbone?](http://stackoverflow.com/questions/34782249/can-a-react-redux-app-really-scale-as-well-as-say-backbone-even-with-reselect)
-- [React.js pure render performance anti-pattern](https://medium.com/@esamatti/react-js-pure-render-performance-anti-pattern-fb88c101332f)
+- [Stack Overflow - React-Redux app 可以 scale 像 Backbone 嗎？](http://stackoverflow.com/questions/34782249/can-a-react-redux-app-really-scale-as-well-as-say-backbone-even-with-reselect)
+- [React.js pure render 效能 anti-pattern](https://medium.com/@esamatti/react-js-pure-render-performance-anti-pattern-fb88c101332f)
 
 
 ### 我如何將我的 mapStateToProps 加速？
@@ -461,30 +464,30 @@ let mapStateToProps = (state) => {
 
 #### 更多資訊
 **文件**
-- [Recipes: Computed Derived Data](recipes/ComputingDerivedData.md)
+- [Recipes：計算派送的資料](recipes/ComputingDerivedData.md)
 
 **討論**
-- [#815 - Working with Data Structures](https://github.com/reactjs/redux/issues/815)
-- [Reselect #47 - Memoizing Hierarchical Selectors](https://github.com/reactjs/reselect/issues/47)
+- [#815 - 處理資料結構](https://github.com/reactjs/redux/issues/815)
+- [Reselect #47 - Memoize 分層 Selectors](https://github.com/reactjs/reselect/issues/47)
 
 
 ### 為什麼我在我 connect 的 component 沒有 `this.props.dispatch` 可以使用？
 
 `connect` function 有兩個主要參數，兩者是可選的。首先，`mapStateToProps`，它是一個 funcion，當 store 發生改變時，你提供一個方法從 store 將 state 拉回，然後將這些值當作 props 傳送到你的 component。第二，`mapDispatchToProps`，它是一個 function，讓你提供 store 的 dispatch function 來使用，通常透過建立 action creator 預先綁定的版本，當他們被呼叫時可以自動 dispatch 這些 action。
 
-如果當呼叫 `connect` 時，你不想提供你的 `mapDispatchToProps` function，React-Redux 會提供一個預設的版本，簡單的回傳 `dispatch` 當作 props。這意思說，假設你_提供_自己的 function，`dispatch` 就_不會_自動的提供了。如果仍然想要可以當作 props 來使用，在你的 `mapDispatchToProps`  實做你需要顯式回傳它。
+如果當呼叫 `connect` 時，你不想提供你的 `mapDispatchToProps` function，React-Redux 會提供一個預設的版本，簡單的回傳 `dispatch` 當作 props。這意思說，假設你_提供_自己的 function，`dispatch` 就_不會_自動的提供了。如果仍然想要可以當作 props 來使用，在你的 `mapDispatchToProps`  實作你需要顯式回傳它。
 
 
 #### 更多資訊
 **文件**
-- [React-Redux API: connect](https://github.com/reactjs/react-redux/blob/master/docs/api.md#connectmapstatetoprops-mapdispatchtoprops-mergeprops-options)
+- [React-Redux API：connect](https://github.com/reactjs/react-redux/blob/master/docs/api.md#connectmapstatetoprops-mapdispatchtoprops-mergeprops-options)
 
 
 **討論**
-- [React-Redux #89 - can i wrap multi actionCreators into one props with name?](https://github.com/reactjs/react-redux/issues/89)
-- [React-Redux #145 - consider always passing down dispatch regardless of what mapDispatchToProps does](https://github.com/reactjs/react-redux/issues/145)
-- [React-Redux #255 - this.props.dispatch is undefined if using mapDispatchToProps](https://github.com/reactjs/react-redux/issues/255)
-- [Stack Overflow - http://stackoverflow.com/questions/34458261/how-to-get-simple-dispatch-from-this-props-using-connect-w-redux/34458710](How to get simple dispatch from this.props using connect w/ Redux?)
+- [React-Redux #89 - 可以將多個 actionCreators 包裝到一個有名稱的 props 嗎？](https://github.com/reactjs/react-redux/issues/89)
+- [React-Redux #145 - 始終考慮如何傳送 dispatch，而不管 mapDispatchToProps 是怎麼做](https://github.com/reactjs/react-redux/issues/145)
+- [React-Redux #255 - 如果使用 mapDispatchToProps this.props.dispatch 是 undefined](https://github.com/reactjs/react-redux/issues/255)
+- [Stack Overflow - 在 Redux 如何使用 connect 簡單從 this.props 取得 dispatch？](http://stackoverflow.com/questions/34458261/how-to-get-simple-dispatch-from-this-props-using-connect-w-redux/34458710)
 
 
 ### 我應該只 connect 我的頂層 component，或者我可以在我的 tree 中 connect 更多的 component？
@@ -499,16 +502,16 @@ let mapStateToProps = (state) => {
 
 #### 更多資訊
 **文件**
-- [Basics: Usage with React](basics/UsageWithReact.md)
+- [基礎：與 React 的使用方法](basics/UsageWithReact.md)
 
 
 **討論**
-- [Presentational and Container Components](https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0)
-- [Twitter - emphasizing "one container" was a mistake](https://twitter.com/dan_abramov/status/668585589609005056)
-- [#419 - Recommended usage of connect](https://github.com/reactjs/redux/issues/419)
-- [#756 - container vs component?](https://github.com/reactjs/redux/issues/756)
-- [#1176 - Redux+React with only stateless components](https://github.com/reactjs/redux/issues/1176)
-- [Stack Overflow - can a dumb component use a Redux container?](http://stackoverflow.com/questions/34992247/can-a-dumb-component-use-render-redux-container-component)
+- [Presentational 和 Container Components](https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0)
+- [Twitter - 強調「一個 container」是一個錯誤](https://twitter.com/dan_abramov/status/668585589609005056)
+- [#419 - connect 的建議使用方法](https://github.com/reactjs/redux/issues/419)
+- [#756 - container vs component？](https://github.com/reactjs/redux/issues/756)
+- [#1176 - Redux+React 與唯一 stateless components](https://github.com/reactjs/redux/issues/1176)
+- [Stack Overflow - dumb component 可以使用 Redux container 嗎？](http://stackoverflow.com/questions/34992247/can-a-dumb-component-use-render-redux-container-component)
 
 
 
@@ -520,12 +523,12 @@ Redux 的「範例」資料夾有很多各種不同複雜程度的 sample 專案
 
 #### 更多資訊
 **文件**
-- [Introduction: Examples](introduction/Examples.md)
+- [介紹：範例](introduction/Examples.md)
 
 
 **討論**
-- [Reddit - Large open source react/redux projects?](https://www.reddit.com/r/reactjs/comments/496db2/large_open_source_reactredux_projects/)
-- [HN - Is there any huge web application built using Redux?](https://news.ycombinator.com/item?id=10710240)
+- [Reddit - 大型 open source react/redux 專案？](https://www.reddit.com/r/reactjs/comments/496db2/large_open_source_reactredux_projects/)
+- [HN - 有任何使用 Redux 建立的大型 web 應用程式嗎？](https://news.ycombinator.com/item?id=10710240)
 
 
 ### 我該如何在 Redux 實作身分驗證？
@@ -544,6 +547,6 @@ Redux 的「範例」資料夾有很多各種不同複雜程度的 sample 專案
 
 **討論**
 - [Authentication with JWT by Auth0](https://auth0.com/blog/2016/01/04/secure-your-react-and-redux-app-with-jwt-authentication/)
-- [Tips to Handle Authentication in Redux](https://medium.com/@MattiaManzati/tips-to-handle-authentication-in-redux-2-introducing-redux-saga-130d6872fbe7)
+- [在 Redux 處理認證的 tips](https://medium.com/@MattiaManzati/tips-to-handle-authentication-in-redux-2-introducing-redux-saga-130d6872fbe7)
 - [react-redux-jwt-auth-example](https://github.com/joshgeller/react-redux-jwt-auth-example)
 - [redux-auth](https://github.com/lynndylanhurley/redux-auth)
